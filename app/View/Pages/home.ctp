@@ -2,205 +2,156 @@
 /**
  *
  *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.View.Pages
+ * @package       app.View.Layouts
  * @since         CakePHP(tm) v 0.10.0.1076
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-if (!Configure::read('debug')):
-	throw new NotFoundException();
-endif;
-
-App::uses('Debugger', 'Utility');
+$cakeDescription = __d('cake_dev', 'Research Monster');
 ?>
-<h2><?php echo __d('cake_dev', 'Release Notes for CakePHP %s.', Configure::version()); ?></h2>
-<p>
-	<a href="http://cakephp.org/changelogs/<?php echo Configure::version(); ?>"><?php echo __d('cake_dev', 'Read the changelog'); ?> </a>
-
-
-</p>
-<?php
-if (Configure::read('debug') > 0):
-	Debugger::checkSecurityKeys();
-endif;
-?>
-<?php
-if (file_exists(WWW_ROOT . 'css' . DS . 'cake.generic.css')):
-?>
-<p id="url-rewriting-warning" style="background-color:#e32; color:#fff;">
-	<?php echo __d('cake_dev', 'URL rewriting is not properly configured on your server.'); ?>
-	1) <a target="_blank" href="http://book.cakephp.org/2.0/en/installation/url-rewriting.html" style="color:#fff;">Help me configure it</a>
-	2) <a target="_blank" href="http://book.cakephp.org/2.0/en/development/configuration.html#cakephp-core-configuration" style="color:#fff;">I don't / can't use URL rewriting</a>
-</p>
-<?php
-endif;
-?>
-<p>
-<?php
-	if (version_compare(PHP_VERSION, '5.2.8', '>=')):
-		echo '<span class="notice success">';
-			echo __d('cake_dev', 'Your version of PHP is 5.2.8 or higher.');
-		echo '</span>';
-	else:
-		echo '<span class="notice">';
-			echo __d('cake_dev', 'Your version of PHP is too low. You need PHP 5.2.8 or higher to use CakePHP.');
-		echo '</span>';
-	endif;
-?>
-</p>
-<p>
+<!DOCTYPE html>
+<html>
+<head>
+	<?php echo $this->Html->charset(); ?>
+	<title>
+		<?php echo $cakeDescription ?>:
+		<?php echo $title_for_layout; ?>
+	</title>
 	<?php
-		if (is_writable(TMP)):
-			echo '<span class="notice success">';
-				echo __d('cake_dev', 'Your tmp directory is writable.');
-			echo '</span>';
-		else:
-			echo '<span class="notice">';
-				echo __d('cake_dev', 'Your tmp directory is NOT writable.');
-			echo '</span>';
-		endif;
+                echo $this->Html->css('bootstrap.min');//fetches the css file
+                echo $this->Html->css('grayscale');
+				echo $this->fetch('meta');
+				echo $this->fetch('css');
+				echo $this->fetch('script');
 	?>
-</p>
-<p>
-	<?php
-		$settings = Cache::settings();
-		if (!empty($settings)):
-			echo '<span class="notice success">';
-				echo __d('cake_dev', 'The %s is being used for core caching. To change the config edit %s', '<em>'. $settings['engine'] . 'Engine</em>', 'APP/Config/core.php');
-			echo '</span>';
-		else:
-			echo '<span class="notice">';
-				echo __d('cake_dev', 'Your cache is NOT working. Please check the settings in %s', 'APP/Config/core.php');
-			echo '</span>';
-		endif;
-	?>
-</p>
-<p>
-	<?php
-		$filePresent = null;
-		if (file_exists(APP . 'Config' . DS . 'database.php')):
-			echo '<span class="notice success">';
-				echo __d('cake_dev', 'Your database configuration file is present.');
-				$filePresent = true;
-			echo '</span>';
-		else:
-			echo '<span class="notice">';
-				echo __d('cake_dev', 'Your database configuration file is NOT present.');
-				echo '<br/>';
-				echo __d('cake_dev', 'Rename %s to %s', 'APP/Config/database.php.default', 'APP/Config/database.php');
-			echo '</span>';
-		endif;
-	?>
-</p>
-<?php
-if (isset($filePresent)):
-	App::uses('ConnectionManager', 'Model');
-	try {
-		$connected = ConnectionManager::getDataSource('default');
-	} catch (Exception $connectionError) {
-		$connected = false;
-		$errorMsg = $connectionError->getMessage();
-		if (method_exists($connectionError, 'getAttributes')):
-			$attributes = $connectionError->getAttributes();
-			if (isset($errorMsg['message'])):
-				$errorMsg .= '<br />' . $attributes['message'];
-			endif;
-		endif;
-	}
-?>
-<p>
-	<?php
-		if ($connected && $connected->isConnected()):
-			echo '<span class="notice success">';
-				echo __d('cake_dev', 'CakePHP is able to connect to the database.');
-			echo '</span>';
-		else:
-			echo '<span class="notice">';
-				echo __d('cake_dev', 'CakePHP is NOT able to connect to the database.');
-				echo '<br /><br />';
-				echo $errorMsg;
-			echo '</span>';
-		endif;
-	?>
-</p>
-<?php endif; ?>
-<?php
-	App::uses('Validation', 'Utility');
-	if (!Validation::alphaNumeric('cakephp')):
-		echo '<p><span class="notice">';
-			echo __d('cake_dev', 'PCRE has not been compiled with Unicode support.');
-			echo '<br/>';
-			echo __d('cake_dev', 'Recompile PCRE with Unicode support by adding <code>--enable-unicode-properties</code> when configuring');
-		echo '</span></p>';
-	endif;
-?>
+    <link href="app/webroot/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="app/webroot/fonts/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="app/webroot/img/rmfavicon.png" type="image/x-icon" />
+       
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" style="background-color:#003366">
 
-<p>
-	<?php
-		if (CakePlugin::loaded('DebugKit')):
-			echo '<span class="notice success">';
-				echo __d('cake_dev', 'DebugKit plugin is present');
-			echo '</span>';
-		else:
-			echo '<span class="notice">';
-				echo __d('cake_dev', 'DebugKit is not installed. It will help you inspect and debug different aspects of your application.');
-				echo '<br/>';
-				echo __d('cake_dev', 'You can install it from %s', $this->Html->link('GitHub', 'https://github.com/cakephp/debug_kit'));
-			echo '</span>';
-		endif;
-	?>
-</p>
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    &nbsp;<i class="fa fa-play-circle"></i>  <span class="light">Research</span> Monster
+                </a>
+            </div>
 
-<h3><?php echo __d('cake_dev', 'Editing this Page'); ?></h3>
-<p>
-<?php
-echo __d('cake_dev', 'To change the content of this page, edit: %s.<br />
-To change its layout, edit: %s.<br />
-You can also add some CSS styles for your pages at: %s.',
-	'APP/View/Pages/home.ctp', 'APP/View/Layouts/default.ctp', 'APP/webroot/css');
-?>
-</p>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#login">Login</a><!--about-->
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#register">Register</a><!--download-->
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a><!--contact-->
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
-<h3><?php echo __d('cake_dev', 'Getting Started'); ?></h3>
-<p>
-	<?php
-		echo $this->Html->link(
-			sprintf('<strong>%s</strong> %s', __d('cake_dev', 'New'), __d('cake_dev', 'CakePHP 2.0 Docs')),
-			'http://book.cakephp.org/2.0/en/',
-			array('target' => '_blank', 'escape' => false)
-		);
-	?>
-</p>
-<p>
-	<?php
-		echo $this->Html->link(
-			__d('cake_dev', 'The 15 min Blog Tutorial'),
-			'http://book.cakephp.org/2.0/en/tutorials-and-examples/blog/blog.html',
-			array('target' => '_blank', 'escape' => false)
-		);
-	?>
-</p>
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<h3><?php echo __d('cake_dev', 'Official Plugins'); ?></h3>
-<p>
-<ul>
-	<li>
-		<?php echo $this->Html->link('DebugKit', 'https://github.com/cakephp/debug_kit') ?>:
-		<?php echo __d('cake_dev', 'provides a debugging toolbar and enhanced debugging tools for CakePHP applications.'); ?>
-	</li>
-	<li>
-		<?php echo $this->Html->link('Localized', 'https://github.com/cakephp/localized') ?>:
-		<?php echo __d('cake_dev', 'contains various localized validation classes and translations for specific countries'); ?>
-	</li>
-</ul>
-</p>
+    <!-- Login/About Section -->
+    <?php include 'files/loginform.php';?>
 
-<h3><?php echo __d('cake_dev', 'More about CakePHP'); ?></h3>
-<p>
-<?php echo __d('cake_dev', 'CakePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC.'); ?>
-</p>
-<p>
-<?php echo __d('cake_dev', 'Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.'); ?>
-</p>
+    <!-- Download Section -->
+    <section id="register" class="content-section text-center">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Register</h2>
+                    <p>If you are not yet registered with Research Monster, start here:</p>
+                    <div class="col-lg-4 col-lg-offset-4">
+                        <a href="registration.php"><button class="btn btn-lg btn-primary btn-block" type="submit">Register</button></a>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Contact the GBC Office of Research and Innovation</h2>
+                <p>Learn more about our supports for industry innovation, faculty engagement, and student learning.</p>
+                <p><a href="mailto:research@georgebrown.ca">research@georgebrown.ca</a>
+                </p>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="http://www.georgebrown.ca/" class="btn btn-default btn-lg" target="_blank"><i class="glyphicon glyphicon-book"></i> <span class="network-name">George Brown College</span></a>
+                    </li>
+                    <li>
+                        <a href="http://www.georgebrown.ca/research/" class="btn btn-default btn-lg" target="_blank"><i class="glyphicon glyphicon-bookmark"></i> <span class="network-name">Research and Innovation</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; Research Monster 2015</p>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/grayscale.js"></script>
+    
+    
+
+</body>
 
 
+</html>
