@@ -7,6 +7,7 @@ or interface in an application. For example, when users request www.example.com/
 The code for that action would look something like this:*/
 
 class PostsController extends AppController {
+    
     public $helpers = array('Html', 'Form');
 
     public function index() {

@@ -36,10 +36,17 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	?>
 </head>
 <body>
+    		<div id="header">
+			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
+		</div>
+		<div id="content">
+            
+			<?php echo $this->Session->flash(); ?>
+                        
+			<?php echo $this->fetch('content'); ?>
+		</div>
 	<div id="container">
-            <h2>Welcome to my website.</h2> <h2>Please select an option:</h2>
-            <h3><font color="white">Login</font></h3>
-            <h3><font color="white">Register</font></h3>
+            
 		<div id="footer">
 			<?php echo $this->Html->link(
 					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),

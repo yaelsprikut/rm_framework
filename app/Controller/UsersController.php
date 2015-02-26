@@ -8,7 +8,8 @@ class UsersController extends AppController {
 
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('add');
+        // Allow users to register and logout.
+        $this->Auth->allow('add', 'logout');
     }
 
     public function index() {
