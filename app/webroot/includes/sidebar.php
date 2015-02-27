@@ -1,12 +1,4 @@
-<?php $cakeDescription = __d('cake_dev', 'Research Monster'); ?>
-
-<html>
-    <body>
-        <?php include 'includes-index/navbar.php';?>
-        <?php include 'includes-index/header.php';?>
-
-        
-        <div class="container-fluid main-container">
+	<div class="container-fluid main-container">
 		<div class="col-md-2 sidebar">
 			<div class="panel panel-default">
                 <!-- Default panel contents -->
@@ -152,6 +144,3 @@
             </div>
 		</div>
         </div>
-    </body>
-
-</html>

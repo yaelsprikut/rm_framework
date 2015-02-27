@@ -28,22 +28,26 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<?php
 
 		//echo $this->Html->css('cake.generic');
-
+                echo $this->Html->css('bootstrap');
+                echo $this->Html->css('bootstrap.min');
+                echo $this->Html->css('styles');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
-        <link rel="shortcut icon" href="app/webroot/img/rmfavicon.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="<?php echo $this->webroot; ?>img/rmfavicon.png" type="image/x-icon" />
     
 </head>
 <body>
-		
-            
-			<?php echo $this->Session->flash(); ?>
-                        
-			<?php echo $this->fetch('content'); ?>
-		
 
+			<?php echo $this->Session->flash(); ?>                       
+			<?php echo $this->fetch('content'); ?>
+                        
+		
+        
 	<?php echo $this->element('sql_dump'); ?>
 </body>
+<footer>
+    <?php include 'includes/footer.php';?>
+</footer>
 </html>
