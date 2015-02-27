@@ -13,18 +13,23 @@
     </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">  
-          <li><a href="index.php">Home</a></li>
-          <li><a href="registration.php">Register</a></li>
+          <li><?php echo $this->Html->link('Home', '../'); ?></li>
+          <li><?php echo $this->Html->link('Register', '../users/add'); ?></li>
           <li><a href="about.php">About Us</a></li>
         </ul>
           
           <ul class="nav navbar-right navbar-nav">
             <li>
-            <form class="navbar-form navbar-left" method="post" role="submit" action="index.php#login">
+            <form class="navbar-form navbar-left">
                 <div class="form-group">  
                     <b>Already a member?  </b>         
                 </div>
-                <button class="btn btn-primary"><i class="glyphicon glyphicon-user"></i> Login to <b>Research Monster</b></button>
+                <?php
+                        echo $this->Html->link('Login to Research Monster','../users/login', array(
+                              'class' => 'btn btn-primary',
+                              'action' => 'login',
+                              'div' => false));
+                        ?>
             </form>
             </li>
         </ul>

@@ -80,7 +80,11 @@ class UsersController extends AppController {
                 if ($this->Auth->login()) {
                     return $this->redirect($this->Auth->redirectUrl());
                 }
-                $this->Session->setFlash(__('Invalid username or password, try again'));
+                $this->Session->setFlash(__('<div class="alert alert-danger" role="alert">
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only">Error:</span>
+                            Enter a valid username and password.
+                          </div>'));
             }
         }
 
