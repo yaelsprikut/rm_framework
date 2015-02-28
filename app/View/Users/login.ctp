@@ -7,7 +7,7 @@
         <?php echo $this->Form->create('User'); ?>
         
         <div class="container-fluid main-container">
-		<div class="col-md-2 sidebar">
+		<div class="col-md-3 sidebar">
 			<div class="panel panel-default">
                 <!-- Default panel contents -->
                 <div class="panel-heading">Navigation</div>

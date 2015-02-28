@@ -23,8 +23,7 @@ $cakeDescription = __d('cake_dev', 'Research Monster');
     <body>
         <?php include 'includes-index/navbar.php';?>
         <?php include 'includes-index/header.php';?>
-        <?php include 'includes-home/searchbar.php';?>
-        <?php include 'includes/sidebar.php';?>
+        
     </body>
 
 </html>

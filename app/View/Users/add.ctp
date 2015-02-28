@@ -9,6 +9,7 @@
         <?php 
         echo $this->Form->input('fname');
         echo $this->Form->input('lname');
+        echo $this->Form->input('studentid');
         echo $this->Form->input('username');
         echo $this->Form->input('password');
         echo $this->Form->input('role', array(
