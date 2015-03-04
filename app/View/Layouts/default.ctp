@@ -36,20 +36,33 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	?>
         <link rel="shortcut icon" href="<?php echo $this->webroot; ?>img/rmfavicon.png" type="image/x-icon" />    
 </head>
-<body>
+<body> <!--- default layout settings -->
     <?php if ($current_user['role'] == 'student'){
         include 'student/navbar.php';
-    }else if ($current_user['role'] == 'staff'){      
-        include 'includes-index/navbar.php';      
-    }
+        }else if ($current_user['role'] == 'staff'){      
+            include 'teacher/navbar.php';      
+        }else if($current_user['role'] == 'admin'){
+            include 'admin/navbar.php'; 
+        }else{
+            include 'includes-index/navbar.php'; 
+        }
           ?>
-        <?php include 'includes-index/header.php';?>
-			                      
+    <?php include 'includes-index/header.php';?>
+    <?php if ($current_user['role'] == 'admin'){
+        include 'admin/sidebar.php';
+    }else{
+        include 'includes/sidebar.php';
+    }
+    ?>
 			<?php echo $this->fetch('content'); ?>                       		
         
-	<?php echo $this->element('sql_dump'); ?>
+                        <?php echo $this->element('sql_dump'); ?>
 </body>
 <footer>
     <?php include 'includes/footer.php';?>
 </footer>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/scripts.js"></script>
 </html>

@@ -1,6 +1,6 @@
-<!---This navbar only appears for REGISTERED STUDENTS--->
+<!---This navbar only appears for REGISTERED STAFF--->
 
-<!---REGISTERED STUDENT NAVBAR--->
+<!---REGISTERED STAFF NAVBAR--->
 
 <nav class="navbar navbar-static">
    <div class="container">
@@ -26,7 +26,7 @@
             <ul class="dropdown-menu">
               <li><a href="projects.php?c=1">New Projects</a></li>
               <li><a href="projects.php?c=2">Browse Projects</a></li>
-              <li><a href="projects.php?c=3">Recently Applied</a></li> 
+              <li><a href="projects.php?c=3">Post Projects</a></li> 
             </ul>
           </li>
           <li><a href="about.php">About Us</a></li>

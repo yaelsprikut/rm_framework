@@ -4,23 +4,7 @@
         <?php echo $this->Form->create('User'); ?>
         
         <div class="container-fluid main-container">
-		<div class="col-md-3 sidebar">
-			<div class="panel panel-default">
-                <!-- Default panel contents -->
-                <div class="panel-heading">Navigation</div>
-                <div class="panel-body">
-                </div>
-
-                <!-- List group -->
-                <ul class="list-group">
-                  <li class="list-group-item">Homepage</li>
-                  <li class="list-group-item">News and Announcements</li>
-                  <li class="list-group-item">Career Events</li>
-                  <li class="list-group-item">Browse Users</li>
-                  <li class="list-group-item">Browse Projects</li>
-                </ul>
-              </div>
-		</div>
+		<!--sidebar went HERE -->
 		<div class="col-md-8 content"> <!----cut here --->
             <div class="panel panel-default">
                 <div class="panel-heading">

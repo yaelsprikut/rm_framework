@@ -1,11 +1,15 @@
+<!----------------- ADMIN SIDEBAR ---------->
+
 <div class="col-md-3 sidebar">
 			<div class="panel panel-default">
                 <!-- Default panel contents -->
-                <div class="panel-heading"><b>Navigation</b></div>
+                <div class="panel-heading"><b>Dashboard Menu</b></div>
+                <div class="panel-body">
+                </div>
 
                 <!-- List group -->
                 <ul class="list-group">
-                  <li class="list-group-item">Homepage</li>
+                  <li class="list-group-item">List Users</li>
                   <li class="list-group-item">News and Announcements</li>
                   <li class="list-group-item">Career Events</li>
                   <li class="list-group-item">Browse Users</li>
