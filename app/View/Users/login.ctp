@@ -1,8 +1,5 @@
 <?php $cakeDescription = __d('cake_dev', 'Research Monster'); ?>
-
-
         <?php echo $this->Form->create('User'); ?>
-        
         <div class="container-fluid main-container">
 		<!--sidebar went HERE -->
 		<div class="col-md-8 content"> <!----cut here --->

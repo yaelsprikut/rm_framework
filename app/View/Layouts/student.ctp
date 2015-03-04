@@ -1,19 +1,4 @@
 <?php
-/**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.View.Layouts
- * @since         CakePHP(tm) v 0.10.0.1076
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
- */
-
 $cakeDescription = __d('cake_dev', 'GBC Research Monster');
 $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 ?>
@@ -37,18 +22,12 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         <link rel="shortcut icon" href="<?php echo $this->webroot; ?>img/rmfavicon.png" type="image/x-icon" />    
 </head>
 <body> <!--- default layout settings -->
-    <?php echo $this->element('navbar');?> 
-    <?php echo $this->element('header');?>
+    <?php include 'student/navbar.php';?>
+    <?php include 'includes-index/header.php';?>
+    <?php include 'includes/sidebar.php'; ?>
     
-    <?php if ($current_user['role'] == 'admin'){
-        include 'admin/sidebar.php';
-    }else{
-        include 'includes/sidebar.php';
-    }
-    ?>
-
-			<?php echo $this->fetch('content'); ?>  
-                        
+			<?php echo $this->fetch('content'); ?>                       		
+        
                         <?php echo $this->element('sql_dump'); ?>
 </body>
 <footer>
