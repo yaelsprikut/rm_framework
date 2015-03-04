@@ -20,10 +20,7 @@ $cakeDescription = __d('cake_dev', 'Research Monster');
 ?>
 <!DOCTYPE html>
 <html>
-    <body>
-        <?php include 'includes-index/navbar.php';?>
-        <?php include 'includes-index/header.php';?>
-        
+    <body>      
     </body>
 
 </html>

@@ -25,25 +25,27 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		<?php echo $cakeDescription ?>:
 		<?php echo $this->fetch('title'); ?>
 	</title>
-	<?php
-
-		//echo $this->Html->css('cake.generic');
-                echo $this->Html->css('bootstrap');
-                echo $this->Html->css('bootstrap.min');
-                echo $this->Html->css('styles');
-		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
+	<?php           
+        //echo $this->Html->css('cake.generic');
+        echo $this->Html->css('bootstrap');
+        echo $this->Html->css('bootstrap.min');
+        echo $this->Html->css('styles');
+        echo $this->fetch('meta');
+        echo $this->fetch('css');
+        echo $this->fetch('script');
 	?>
-        <link rel="shortcut icon" href="<?php echo $this->webroot; ?>img/rmfavicon.png" type="image/x-icon" />
-    
+        <link rel="shortcut icon" href="<?php echo $this->webroot; ?>img/rmfavicon.png" type="image/x-icon" />    
 </head>
 <body>
-
+    <?php if ($current_user['role'] == 'student'){
+        include 'student/navbar.php';
+    }else if ($current_user['role'] == 'staff'){      
+        include 'includes-index/navbar.php';      
+    }
+          ?>
+        <?php include 'includes-index/header.php';?>
 			                      
-			<?php echo $this->fetch('content'); ?>
-                        
-		
+			<?php echo $this->fetch('content'); ?>                       		
         
 	<?php echo $this->element('sql_dump'); ?>
 </body>

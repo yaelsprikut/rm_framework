@@ -1,9 +1,6 @@
 <?php $cakeDescription = __d('cake_dev', 'Research Monster'); ?>
 
-<html>
-    <body>
-        <?php include 'includes-index/navbar.php';?>
-        <?php include 'includes-index/header.php';?>
+
         <?php echo $this->Form->create('User'); ?>
         
         <div class="container-fluid main-container">
@@ -82,6 +79,4 @@
             </div>
 		</div>
         </div>
-    </body>
 
-</html>
