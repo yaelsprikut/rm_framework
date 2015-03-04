@@ -1,19 +1,4 @@
 <?php
-/**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.View.Layouts
- * @since         CakePHP(tm) v 0.10.0.1076
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
- */
-
 $cakeDescription = __d('cake_dev', 'GBC Research Monster');
 $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 ?>
@@ -26,10 +11,12 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		<?php echo $this->fetch('title'); ?>
 	</title>
 	<?php           
-        //echo $this->Html->css('cake.generic');
         echo $this->Html->css('bootstrap');
         echo $this->Html->css('bootstrap.min');
         echo $this->Html->css('styles');
+        echo $this->Html->script('bootstrap.min');
+        echo $this->Html->script('scripts');
+        echo $this->Html->script('jquery');
         echo $this->fetch('meta');
         echo $this->fetch('css');
         echo $this->fetch('script');
@@ -39,23 +26,23 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 <body> <!--- default layout settings -->
     <?php echo $this->element('navbar');?> 
     <?php echo $this->element('header');?>
+    <?php echo $this->element('sidebar');?>
     
-    <?php if ($current_user['role'] == 'admin'){
-        include 'admin/sidebar.php';
-    }else{
-        include 'includes/sidebar.php';
-    }
-    ?>
+
 
 			<?php echo $this->fetch('content'); ?>  
                         
                         <?php echo $this->element('sql_dump'); ?>
+
+    
 </body>
 <footer>
-    <?php include 'includes/footer.php';?>
+    <?php echo $this->element('footer');?>
 </footer>
 
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/scripts.js"></script>
+
+
 </html>

@@ -13,9 +13,9 @@
     </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">  
-          <li><a href="home.php">Home</a></li>
+          <li><?php echo $this->Html->link('Home', '../'); ?></li>
           <li class="dropdown">
-            <a href="profile.php" class="dropdown-toggle" data-toggle="dropdown">Profile</a>
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">Profile</a>
             <ul class="dropdown-menu">
               <li><a href="profile.php?c=1">View Profile</a></li>
               <li><a href="profile.php?c=2">Edit Profile</a></li>  

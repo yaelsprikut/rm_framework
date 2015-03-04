@@ -11,10 +11,12 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		<?php echo $this->fetch('title'); ?>
 	</title>
 	<?php           
-        //echo $this->Html->css('cake.generic');
         echo $this->Html->css('bootstrap');
         echo $this->Html->css('bootstrap.min');
         echo $this->Html->css('styles');
+        echo $this->Html->script('bootstrap.min');
+        echo $this->Html->script('scripts');
+        echo $this->Html->script('jquery');
         echo $this->fetch('meta');
         echo $this->fetch('css');
         echo $this->fetch('script');
@@ -22,19 +24,19 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         <link rel="shortcut icon" href="<?php echo $this->webroot; ?>img/rmfavicon.png" type="image/x-icon" />    
 </head>
 <body> <!--- default layout settings -->
-    <?php include 'student/navbar.php';?>
-    <?php include 'includes-index/header.php';?>
-    <?php include 'includes/sidebar.php'; ?>
+    <?php echo $this->element('navbar.student');?> 
+    <?php echo $this->element('header');?>
+    <?php echo $this->element('sidebar');?>
     
-			<?php echo $this->fetch('content'); ?>                       		
-        
+
+
+			<?php echo $this->fetch('content'); ?>  
+                        
                         <?php echo $this->element('sql_dump'); ?>
+
 </body>
 <footer>
-    <?php include 'includes/footer.php';?>
+    <?php echo $this->element('footer');?>
 </footer>
 
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/scripts.js"></script>
 </html>

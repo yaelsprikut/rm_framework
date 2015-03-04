@@ -24,9 +24,14 @@
           <li class="dropdown">
             <a href="" class="dropdown-toggle" data-toggle="dropdown">Projects</a>
             <ul class="dropdown-menu">
-              <li><a href="projects.php?c=1">New Projects</a></li>
-              <li><a href="projects.php?c=2">Browse Projects</a></li>
-              <li><a href="projects.php?c=3">Post Projects</a></li> 
+              <li><a href="">Your Projects</a></li>
+              <li><a href="">Suggested Projects</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">Students</a>
+            <ul class="dropdown-menu">
+              <li><a href="">Search Students</a></li>
             </ul>
           </li>
           <li><a href="about.php">About Us</a></li>
