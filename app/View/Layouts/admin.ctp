@@ -11,10 +11,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		<?php echo $this->fetch('title'); ?>
 	</title>
 	<?php           
-        //echo $this->Html->css('cake.generic');
-        echo $this->Html->css('bootstrap');
-        echo $this->Html->css('bootstrap.min');
-        echo $this->Html->css('styles');
+        echo $this->Html->css(array('bootstrap', 'bootstrap.min', 'styles'));
         echo $this->fetch('meta');
         echo $this->fetch('css');
         echo $this->fetch('script');
@@ -36,7 +33,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
     <?php echo $this->element('footer');?>
 </footer>
 
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/scripts.js"></script>
+    <?php      
+         echo $this->Html->script(array('jquery', 'bootstrap.min', 'scripts'));
+         echo $this->fetch('script'); 
+    ?>
 </html>

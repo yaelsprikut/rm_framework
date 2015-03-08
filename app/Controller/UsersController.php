@@ -10,7 +10,8 @@ class UsersController extends AppController {
         parent::beforeFilter();
         // Allow users to register and logout.
         $this->Auth->allow('add', 'logout');
-        $this->layout = 'student';
+        //$this->layout = 'student';
+
         
     }
 
@@ -80,6 +81,7 @@ class UsersController extends AppController {
         public function login() {
             if ($this->request->is('post')) {
                 if ($this->Auth->login()) {
+                    
                     return $this->redirect($this->Auth->redirectUrl());
                 }
                 $this->Session->setFlash(__('<div class="alert alert-danger" role="alert">

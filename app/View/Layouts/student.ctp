@@ -14,12 +14,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         echo $this->Html->css('bootstrap');
         echo $this->Html->css('bootstrap.min');
         echo $this->Html->css('styles');
-        echo $this->Html->script('bootstrap.min');
-        echo $this->Html->script('scripts');
-        echo $this->Html->script('jquery');
         echo $this->fetch('meta');
         echo $this->fetch('css');
-        echo $this->fetch('script');
 	?>
         <link rel="shortcut icon" href="<?php echo $this->webroot; ?>img/rmfavicon.png" type="image/x-icon" />    
 </head>
@@ -37,6 +33,12 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 </body>
 <footer>
     <?php echo $this->element('footer');?>
+        <?php      
+         echo $this->Html->script('jquery');
+         echo $this->Html->script('bootstrap.min');
+         echo $this->Html->script('scripts');
+         echo $this->fetch('script'); 
+        ?>
 </footer>
 
 </html>
