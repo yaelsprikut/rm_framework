@@ -1,8 +1,7 @@
 <?php $cakeDescription = __d('cake_dev', 'Research Monster'); ?>
         <?php echo $this->Form->create('User'); ?>
         
-		<!--sidebar went HERE -->
-		<div class="col-md-6 content"> <!----cut here --->
+
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Welcome to Research Monster
@@ -64,6 +63,6 @@
       
                 </div>
             </div>
-		</div>
+
 
 

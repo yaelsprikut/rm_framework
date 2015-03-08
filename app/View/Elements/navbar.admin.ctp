@@ -1,6 +1,6 @@
 <!---This navbar only appears for ADMINS--->
 
-<nav class="navbar navbar-static">
+<nav class="navbar navbar-fixed-top">
    <div class="container">
     <div class="navbar-header">
         <a href="http://www.georgebrown.ca/"><img class="img-responsive" src="<?php echo $this->webroot; ?>img/gbclogo.png"  height="80" width="80"></a>

@@ -22,10 +22,12 @@ $cakeDescription = __d('cake_dev', 'GBC Research Monster');
         <?php echo $this->element('header');?>
         <div class="container-fluid main-container"> <!--Contains the three essential modules -->
             <?php echo $this->element('sidebar.left');?>
-            <?php echo $this->fetch('content'); ?>  <!--content of the page -->
-            <?php echo $this->element('sidebar.right');?>                    
-            <?php echo $this->element('sql_dump'); ?>       
+            <div class="col-md-6 content">               
+                <?php echo $this->fetch('content'); ?>  <!--content of the page -->              
+            </div>
+            <?php echo $this->element('sidebar.right');?>                          
         </div><!--End of essential modules-->   
+        <?php echo $this->element('sql_dump'); ?> 
     </body>
     
 <footer>

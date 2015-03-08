@@ -22,11 +22,13 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 <body> <!--- default layout settings -->
     <?php echo $this->element('navbar.student');?> 
     <?php echo $this->element('header');?>
-    <?php echo $this->element('sidebar');?>
-    
+    <div class="container-fluid main-container">
+    <?php echo $this->element('sidebar.left');?>
+    <?php echo $this->fetch('content'); ?>  
+    <?php echo $this->element('sidebar.right');?>
+    </div>
 
-
-			<?php echo $this->fetch('content'); ?>  
+			
                         
                         <?php echo $this->element('sql_dump'); ?>
 

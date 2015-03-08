@@ -10,6 +10,10 @@
                   <li class="list-group-item">Career Events</li>
                   <li class="list-group-item">Browse Users</li>
                   <li class="list-group-item">Browse Projects</li>
+                  <li class="list-group-item">News and Announcements</li>
+                  <li class="list-group-item">Career Events</li>
+                  <li class="list-group-item">Browse Users</li>
+                  <li class="list-group-item">Browse Projects</li>
                   
                 </ul>
               </div>
