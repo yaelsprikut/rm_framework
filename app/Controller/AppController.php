@@ -42,10 +42,24 @@ class AppController extends Controller {
     
 
     public function beforeFilter() {
+        
         $this->Auth->allow('display', 'view'); //changed 'index' to 'display' to view homepage
         $this->set('logged_in', $this->Auth->loggedIn());
         $this->set('current_user', $this->Auth->user());
+        
+        //login layout by user
+        $user = $this->Auth->user();
+        if($user['role'] == 'student'){
+            $this->layout = 'student';
+        }else if($user['role'] == 'admin'){
+            $this->layout = 'admin';
+        } else if($user['role'] == 'staff'){
+            $this->layout = 'staff';
+        } else{
+            $this->layout = 'default';
+        }
     }
+    
     
 }
 

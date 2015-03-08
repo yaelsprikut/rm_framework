@@ -1,18 +1,21 @@
 <header>
         <div class="container">
-
+            <br>
+            <br>
+            <br>
+            <br>
                 <!-- Heading Row -->
                 <div class="row">
                     <div class="col-md-7">
-                                <div class="row">
+        <div class="row">
             <div class="col-sm-4">
-                <img class="img-circle img-responsive img-center" src="<?php echo $this->webroot; ?>img/circle.png" width="200px" height="200px" alt="">
+                <img class="img-circle img-responsive img-center" src="<?php echo $this->webroot; ?>img/circle.png" width="150px" height="150px" alt="">
             </div>
             <div class="col-sm-4">
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
+                <img class="img-circle img-responsive img-center" src="http://placehold.it/150x150" alt="">
             </div>
             <div class="col-sm-4">
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
+                <img class="img-circle img-responsive img-center" src="http://placehold.it/150x150" alt="">
             </div>
         </div>
                     </div>

@@ -2,7 +2,7 @@
         <?php echo $this->Form->create('User'); ?>
         <div class="container-fluid main-container">
 		<!--sidebar went HERE -->
-		<div class="col-md-8 content"> <!----cut here --->
+		<div class="col-md-6 content"> <!----cut here --->
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Login to Research Monster
@@ -11,8 +11,9 @@
                 <div class="container">
                 <div class="no-gutter row">           
         <div class="row">
-        <div class="col-xs-16 col-sm-8 col-md-8">  
+        <div class="col-xs-16 col-sm-8 col-md-6">  
             <div class="users form">
+                <div class="well">
                 		<form role="form" action="users">
                         <h2>Sign in to Research Monster <small>Login and start browsing new projects.</small></h2>
                         <hr>
@@ -51,8 +52,7 @@
 		</form>
             </div>
 
-            </div><!---end of col-xs-12 col-sm-6 col-md-6--->
-            <!---RSS FEED -->
+            </div> <!---RSS FEED -->
         </div><!---end of row--->
     </div><!---end of no-gutter row--->            
 </div><!---end of container--->   
