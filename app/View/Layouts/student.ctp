@@ -1,46 +1,40 @@
-<?php
-$cakeDescription = __d('cake_dev', 'GBC Research Monster');
-$cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
-?>
+<?php $cakeDescription = __d('cake_dev', 'GBC Research Monster'); ?>
 <!DOCTYPE html>
-<html>
-<head>
-	<?php echo $this->Html->charset(); ?>
-	<title>
-		<?php echo $cakeDescription ?>:
-		<?php echo $this->fetch('title'); ?>
-	</title>
-	<?php           
-        echo $this->Html->css('bootstrap');
-        echo $this->Html->css('bootstrap.min');
-        echo $this->Html->css('styles');
-        echo $this->fetch('meta');
-        echo $this->fetch('css');
-	?>
-        <link rel="shortcut icon" href="<?php echo $this->webroot; ?>img/rmfavicon.png" type="image/x-icon" />    
-</head>
-<body> <!--- default layout settings -->
-    <?php echo $this->element('navbar.student');?> 
-    <?php echo $this->element('header');?>
-    <div class="container-fluid main-container">
-    <?php echo $this->element('sidebar.left');?>
-    <?php echo $this->fetch('content'); ?>  
-    <?php echo $this->element('sidebar.right');?>
-    </div>
+<html lang="en">
 
-			
-                        
-                        <?php echo $this->element('sql_dump'); ?>
+<head>
+            <?php echo $this->Html->charset(); ?>
+            <title>
+                <?php echo $cakeDescription ?>
+                <?php echo $this->fetch('title'); ?>: Homepage
+            </title>
+            <?php           
+                echo $this->Html->css(array('bootstrap', 'bootstrap.min', 'simple-sidebar', 'styles')); 
+                echo $this->fetch('meta');
+                echo $this->fetch('css');       
+            ?>
+        
+        <link rel="shortcut icon" href="<?php echo $this->webroot; ?>img/rmfavicon.png" type="image/x-icon" />
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<?php echo $this->element('navbar.user');?> 
+<?php echo $this->element('sidebar.student');?> 
+
+      <?php      
+         echo $this->Html->script(array('jquery', 'bootstrap.min', 'scripts'));
+         echo $this->fetch('script'); 
+    ?>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
 
 </body>
-<footer>
-    <?php echo $this->element('footer');?>
-        <?php      
-         echo $this->Html->script('jquery');
-         echo $this->Html->script('bootstrap.min');
-         echo $this->Html->script('scripts');
-         echo $this->fetch('script'); 
-        ?>
-</footer>
-
+<?php echo $this->element('footer');?> 
 </html>

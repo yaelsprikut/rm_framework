@@ -6,7 +6,7 @@ $cakeDescription = __d('cake_dev', 'GBC Research Monster');
     <head>
             <?php echo $this->Html->charset(); ?>
             <title>
-                <?php echo $cakeDescription ?>:
+                <?php echo $cakeDescription ?>
                 <?php echo $this->fetch('title'); ?> Homepage
             </title>
             <?php           

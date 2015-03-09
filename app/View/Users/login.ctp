@@ -1,9 +1,9 @@
-<?php $cakeDescription = __d('cake_dev', 'Research Monster'); ?>
+<?php $cakeDescription = __d('cake_dev', 'Login to Research Monster'); ?>
     <?php echo $this->Form->create('User'); ?>
         
 <div class="panel panel-default">
     <div class="panel-heading">
-        Welcome to Research Monster
+        <?php echo $cakeDescription ?>
     </div>
     <div class="panel-body">
         <div class='well'>
@@ -30,11 +30,14 @@
                           'placeholder' => 'Password',
                           'div' => false));                 
                     ?>
+                                    <a href="" class="btn btn-link pull-right">Forgot Password?</a> 
+                                  
 				</div>
-				<span class="button-checkbox">
-					<a href="" class="btn btn-link pull-right">Forgot Password?</a>
-				</span>
+                               
+                                     
+                                
 				<hr>
+                                
 				<div class="row">
 					<div class="col-xs-6 col-sm-6 col-md-6">
                          <?php

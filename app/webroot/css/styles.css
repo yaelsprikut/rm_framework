@@ -1,7 +1,7 @@
 /* bootstrap 3 helpers */
 
 .navbar-form input, .form-inline input {
-	width:auto;
+	width:1200px;
 }
 
 /* end */
@@ -95,7 +95,7 @@ a,a:hover {
   
 h3.highlight  {
 	padding-top:13px;
-    padding-bottom:14px;
+        padding-bottom:14px;
   	border-bottom:2px solid #0065A4;
 }
 
@@ -108,10 +108,10 @@ h3.highlight  {
   	color:#fff;
   	padding-left:20px;
   	padding-right:20px;
-  	border-left:1px solid #00384F;
+  	border-left:1px solid #0065A4;
 }
 .navbar-nav > li:last-child > a {
-  	border-right:1px solid #00384F;
+  	border-right:1px solid #0065A4;
 }
 
 .navbar-nav li a:hover {

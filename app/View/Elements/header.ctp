@@ -2,8 +2,6 @@
         <div class="container">
             <br>
             <br>
-            <br>
-            <br>
                 <!-- Heading Row -->
                 <div class="row">
                     <div class="col-md-4">
