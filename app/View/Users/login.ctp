@@ -1,57 +1,26 @@
-<?php $cakeDescription = __d('cake_dev', 'Login to Research Monster'); ?>
-    <?php echo $this->Form->create('User'); ?>
-        
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <?php echo $cakeDescription ?>
-    </div>
-    <div class="panel-body">
-        <div class='well'>
-        		<form role="form">
-			<fieldset>
-                                <?php echo $this->Session->flash('auth'); ?>
-                                <?php echo $this->Session->flash(); ?> 
-				<h2>Please Sign In</h2>
-				<hr>
-				<div class="form-group">
-                    <?php
-                        echo $this->Form->input('username',array(
-                              'label' => false,
-                              'class' => 'form-control input-lg',
-                              'placeholder' => 'Username',
-                              'div' => false));
-                        ?>
-				</div>
-				<div class="form-group">
-                    <?php                      
-                    echo $this->Form->input('password',array(
-                          'label' => false,
-                          'class' => 'form-control input-lg',
-                          'placeholder' => 'Password',
-                          'div' => false));                 
-                    ?>
-                                    <a href="" class="btn btn-link pull-right">Forgot Password?</a> 
-                                  
-				</div>
-                               
-                                     
-                                
-				<hr>
-                                
-				<div class="row">
-					<div class="col-xs-6 col-sm-6 col-md-6">
-                         <?php
-                        echo $this->Form->submit('Sign In',array(
-                              'class' => 'btn btn-lg btn-success btn-block',
-                              'div' => false));
-                        ?>
-					</div>
-					<div class="col-xs-6 col-sm-6 col-md-6">
-						<a href="" class="btn btn-lg btn-primary btn-block">Register</a>
-					</div>
-				</div>
-			</fieldset>
-		</form>
+<!-- Login/About Section -->
+    <section id="login" class="container content-section text-center">
+        <div class="row"> 
+            <div class="col-lg-4 col-lg-offset-4">
+                <?php //echo $errorMsg; ?>
+                <img class="img-responsive" src="<?php echo $this->webroot; ?>img/rmlogo.png"  height="100" width="358">
+                <hr>
+            <form class="form-signin" method='POST' action="index.php#login">
+<!----------------------The login form action displays error message ---------------------->
+                <h2 class="form-signin-heading">Please sign in</h2>
+                
+                <label for="inputEmail" class="sr-only">Email address</label>
+                <input type="text" name='username' class="form-control" placeholder="Email address" required>
+                <br>
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" name='password' class="form-control" placeholder="Password" required>
+                <div class="checkbox">
+                  <label>
+                 <input type="checkbox" value="remember-me"> Remember me
+                </label>
+              </div>
+              <button class="btn btn-lg btn-primary btn-block" name='submit' type="submit">Sign in</button>
+            </form>
             </div>
-    </div>
-</div>
+        </div>
+    </section>
