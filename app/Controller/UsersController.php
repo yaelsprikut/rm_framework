@@ -89,11 +89,14 @@ class UsersController extends AppController {
                             <span class="sr-only">Error:</span>
                             Enter a valid username and password.
                           </div>'));
+                $this->redirect('#login');
             }
         }
 
         public function logout() {
-            return $this->redirect($this->Auth->logout());
+            $this->Auth->logout();
+            $this->redirect('index'); //redirects back to index
+                               
         }
 
 }

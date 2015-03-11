@@ -1,6 +1,7 @@
 <?php $cakeDescription = __d('cake_dev', 'Research Monster'); ?>
     <?php echo $this->Form->create('User'); ?>
-     
+
+     <?php $this->layout = 'register'; ?>
         <div class="panel panel-default">
                 <div class="panel-heading">
                     Welcome to Research Monster

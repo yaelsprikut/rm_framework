@@ -86,7 +86,12 @@
                     <h2>Register</h2>
                     <p>If you are not yet registered with Research Monster, start here:</p>
                     <div class="col-lg-4 col-lg-offset-4">
-                        <a href="registration.php"><button class="btn btn-lg btn-primary btn-block" type="submit">Register</button></a>   
+                                        <?php
+                        echo $this->Html->link('Register','../users/add', array(
+                              'class' => 'btn btn-lg btn-primary btn-block',
+                              'action' => 'login',
+                              'div' => false));
+                        ?>   
                     </div>
                 </div>
             </div>

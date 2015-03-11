@@ -22,7 +22,7 @@
                     <b>Already a member?  </b>         
                 </div>
                 <?php
-                        echo $this->Html->link('Login to Research Monster','../users/login', array(
+                        echo $this->Html->link('Login to Research Monster','..#login', array(
                               'class' => 'btn btn-primary',
                               'action' => 'login',
                               'div' => false));
