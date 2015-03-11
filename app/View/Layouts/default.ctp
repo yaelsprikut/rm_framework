@@ -1,3 +1,4 @@
+<?php $cakeDescription = __d('cake_dev', 'GBC Research Monster'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,16 +13,16 @@
     <title>GBC Research Monster</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <?php echo $this->Html->css('bootstrap.min'); ?>
 
     <!-- Custom CSS -->
-    <link href="css/grayscale.css" rel="stylesheet">
+    <?php echo $this->Html->css('grayscale'); ?>
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link rel="shortcut icon" href="images/rmfavicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/rmfavicon.png" type="image/x-icon" />
 
 </head>
 
@@ -118,21 +119,14 @@
             <p>Copyright &copy; Research Monster 2015</p>
         </div>
     </footer>
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
+     <?php      
+         echo $this->Html->script(array('jquery', 'bootstrap.min', 'jquery.easing.min', 'grayscale'));
+         echo $this->fetch('script'); 
+    ?>
 
     <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="js/grayscale.js"></script>
     
     
 
