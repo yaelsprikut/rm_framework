@@ -5,6 +5,9 @@ App::uses('AppModel', 'Model');
 App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
 
 class User extends AppModel {
+    public $hasOne = 'Profile';
+    //public $hasOne = 'Program';
+    
     public $validate = array(
         'fname' => array(
             'required' => array(
@@ -52,7 +55,7 @@ class User extends AppModel {
         ),
         'campus' => array(
             'valid' => array(
-                'rule' => array('inList', array('sj', 'cl', 'wf')),
+                'rule' => array('inList', array('St. James', 'Casa Loma', 'Waterfront')),
                 'message' => 'Please enter a valid role',
                 'allowEmpty' => false
             )

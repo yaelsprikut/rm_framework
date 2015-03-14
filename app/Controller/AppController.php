@@ -19,36 +19,44 @@ App::uses('Controller', 'Controller');
 class AppController extends Controller {
     
     //public $helpers = array('Js' => array('Jquery'));
-    
     public $components = array(
-        'Session',
-        'Auth' => array(
-            'loginRedirect' => array(
-                'controller' => 'posts',
-                'action' => 'index'
-            ),
-            'logoutRedirect' => array(
-                'controller' => 'pages',
-                'action' => 'display',
-                'home'
-            ),
-            'authenticate' => array(
-                'Form' => array(
-                    'passwordHasher' => 'Blowfish'
-                )
+    'Session',
+    'Auth' => array(
+        'loginRedirect' => array('controller' => 'profiles', 'action' => 'index'),
+        'logoutRedirect' => array(
+            'controller' => 'pages',
+            'action' => 'display',
+            'home'
+        ),
+        'authenticate' => array(
+            'Form' => array(
+                'passwordHasher' => 'Blowfish'
             )
-        )
-    );
+        ),
+        'authorize' => array('Controller')
+    )
+);
+    public function isAuthorized($user) {
+    // Admin can access every action
+    if (isset($user['role']) && $user['role'] === 'admin') {
+        return true;
+    }
+
+    // Default deny
+    return false;
+    }
     
 
-    public function beforeFilter() {
+ public function beforeFilter() {
         
-        $this->Auth->allow('display', 'view'); //changed 'index' to 'display' to view homepage
+        $this->Auth->allow('index', 'view'); //changed 'index' to 'display' to view homepage
         $this->set('logged_in', $this->Auth->loggedIn());
         $this->set('current_user', $this->Auth->user());
         
         //login layout by user
         $user = $this->Auth->user();
+        //$profile = $this->Auth->user('id');
+        
         if($user['role'] == 'student'){
             $this->layout = 'student';
         }else if($user['role'] == 'admin'){
@@ -58,9 +66,10 @@ class AppController extends Controller {
         } else{
             $this->layout = 'default';
         }
-    }
-    
-    
+        
+        
+    }  
+      
 }
 
-?>
+

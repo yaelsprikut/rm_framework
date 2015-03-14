@@ -10,13 +10,13 @@ class UsersController extends AppController {
         parent::beforeFilter();
         // Allow users to register and logout.
         $this->Auth->allow('add', 'logout');
-        //$this->layout = 'student';
         
     }
 
     public function index() {
         $this->User->recursive = 0;
         $this->set('users', $this->paginate());
+
     }
 
     public function view($id = null) {
@@ -94,7 +94,7 @@ class UsersController extends AppController {
 
         public function logout() {
             $this->Auth->logout();
-            $this->redirect('index'); //redirects back to index
+            $this->redirect('../'); //redirects back to index
                                
         }
 

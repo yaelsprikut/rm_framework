@@ -1,9 +1,10 @@
-        <div id="wrapper">   
+<div id="wrapper">   
             <br>
             <br>
       <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
+              <?php $this->Session->read('Profile.id'); ?>  
                 <br>
                 <li class="sidebar-brand">
                     <a href="#">
@@ -14,12 +15,13 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"> My Profile <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <?php echo $this->Html->link('My Profile', '../profiles/index'); ?>
+                                <?php echo $this->Html->link('View Profile', array('controller'=>'profiles', 'action' => 'view')); ?>
                             </li>
                             <li>
-                                <?php echo $this->Html->link('Edit Profile', '../profiles/edit'); ?>
+                                <?php echo $this->Html->link('Edit Profile', array('controller'=>'profiles', 'action' => 'edit')); ?>
                             </li>
                         </ul>
+                               
                     </li>
                 <li>
                     <a href="#">Shortcuts</a>
@@ -42,7 +44,6 @@
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
-
         <!-- Page Content -->
         <div id="page-content-wrapper">
             
@@ -62,4 +63,4 @@
         <!-- /#page-content-wrapper -->
 
     </div>
-    <!-- /#wrapper -->
+    

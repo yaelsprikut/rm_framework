@@ -14,7 +14,7 @@
                         echo $this->Form->input('username',array(
                               'label' => false,
                               'class' => 'form-control input-md',
-                              'placeholder' => 'Username',
+                              'placeholder' => 'E-mail Address',
                               'div' => false));
                         ?>
                 <br>

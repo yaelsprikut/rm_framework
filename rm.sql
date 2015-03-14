@@ -458,15 +458,19 @@ INSERT INTO `programs` (`id`, `ProgramName`, `S_ID`) VALUES
 -- Table structure for table `users`
 --
 
-CREATE TABLE IF NOT EXISTS `users` (
-`id` int(10) unsigned NOT NULL,
-  `username` varchar(50) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
-  `role` varchar(20) DEFAULT NULL,
-  `created` datetime DEFAULT NULL,
-  `modified` datetime DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-
+CREATE TABLE users (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	fname VARCHAR(50),
+	lname VARCHAR(50),
+	studentid VARCHAR(10),
+	username VARCHAR(30),
+    password VARCHAR(255),
+    role VARCHAR(20),
+	program VARCHAR(225),
+	campus VARCHAR(225),
+    created DATETIME DEFAULT NULL,
+    modified DATETIME DEFAULT NULL
+);
 --
 -- Dumping data for table `users`
 --

@@ -99,7 +99,7 @@
                                    'label' => false,
                                    'class' => 'form-control',
                                    'placeholder' => 'Select your campus',
-                                   'options' => array('sj' => 'St. James', 'cl' => 'Casa Loma', 'wf' => 'Waterfront' ))); ?>
+                                   'options' => array('St. James' => 'St. James', 'Casa Loma' => 'Casa Loma', 'Waterfront' => 'Waterfront' ))); ?>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                     </div>
 <!----------------------------break-------------------------------------------------------------> <br> 
