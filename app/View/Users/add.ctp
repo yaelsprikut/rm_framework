@@ -83,7 +83,12 @@
                         <div class="col-xs-12">
                         <label for="InputStreetName">Select Your Program</label>
                         <div class="input-group">
-                        <input type="text" class="form-control" name="street_name" placeholder="Enter Street Name and Number" required>
+                        <?php echo $this->Form->input('programs', 
+                               array(
+                                   'label' => false,
+                                   'class' => 'form-control',
+                                   'placeholder' => 'Select your program',
+                                   'options' => array('programs' => 'ProgramName'))); ?>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                         </div>
 <!----------------------------break-------------------------------------------------------------> <br> 
@@ -115,6 +120,5 @@
                               'class' => 'btn btn-lg btn-success btn-block',
                               'div' => false));
                         ?>
-                  
                 </div>
                 </form>

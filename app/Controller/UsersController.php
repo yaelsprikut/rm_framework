@@ -32,7 +32,7 @@ class UsersController extends AppController {
             $this->User->create();
             if ($this->User->save($this->request->data)) {
                 $this->Session->setFlash(__('<div class="alert alert-success" role="alert">You have registered. Login to complete your profile.</div>'));
-                return $this->redirect(array('action' => '#login'));
+                return $this->redirect(array('action' => '../#login'));
             }
             $this->Session->setFlash(
                 __('The user could not be saved. Please, try again.')
@@ -81,7 +81,9 @@ class UsersController extends AppController {
             if ($this->request->is('post')) {
                 if ($this->Auth->login()) {
                     
-                    return $this->redirect($this->Auth->redirectUrl());
+                    return $this->redirect(
+                    array('controller' => 'posts', 'action' => 'index')
+                    );
                 }
                 $this->Session->setFlash(__('<div class="alert alert-danger" role="alert">
                             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>

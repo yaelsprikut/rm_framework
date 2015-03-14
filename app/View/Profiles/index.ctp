@@ -1,6 +1,6 @@
 <!-- File: /app/View/Posts/index.ctp -->
 <?=$this->Session->read('Auth.User.id')?>
-<h1>Blog posts</h1>
+<h1>Profiles</h1>
 <p><?php echo $this->Html->link('Add Profile', array('action' => 'add')); ?></p>
 <table>
     <tr>
@@ -10,11 +10,11 @@
         <th>Actions</th>
         <th>Created</th>
     </tr>
-    
 
 <!-- Here's where we loop through our $posts array, printing out post info -->
 
     <?php foreach ($profiles as $profile): ?>
+    
     <tr>
         <td><?php echo $profile['Profile']['id']; ?></td>
         <td><?php echo $profile['Profile']['user_id']; ?></td>

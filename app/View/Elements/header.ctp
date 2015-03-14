@@ -1,8 +1,8 @@
 <header>
+    <br>
+    <br>
+    <br>
         <div class="container">
-            <br>
-            <br>
-                <!-- Heading Row -->
                 <div class="row">
                     <div class="col-md-4">
         <div class="row">
@@ -28,4 +28,4 @@
                 <!-- /.row -->
         </div>
 </header>   
-        <hr>
+<hr>

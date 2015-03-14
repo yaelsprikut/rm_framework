@@ -9,13 +9,13 @@
                 <?php echo $this->fetch('title'); ?>: Homepage
             </title>
             <?php           
-                echo $this->Html->css(array('bootstrap', 'bootstrap.min', 'simple-sidebar', 'styles')); 
+                echo $this->Html->css(array('bootstrap', 'bootstrap.min', 'simple-sidebar', 'styles', 'font-awesome.min')); 
                 echo $this->fetch('meta');
                 echo $this->fetch('css');       
             ?>
         
         <link rel="shortcut icon" href="<?php echo $this->webroot; ?>img/rmfavicon.png" type="image/x-icon" />
-        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!--        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
 </head>
 
 <body>

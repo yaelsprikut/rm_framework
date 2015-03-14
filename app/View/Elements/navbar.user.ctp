@@ -9,18 +9,31 @@
     <form class="navbar-form navbar-left">
                 <a href="#menu-toggle" class="btn btn-success" id="menu-toggle"><i class="fa fa-th-list"></i><b> Toggle Menu</b></a>
             </form>  
-    <div class="container">
+    
             
-              <form class="navbar-form navbar-left" role="search">
+        <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search projects, students, teachers, etc.">
+        <div class="input-group">      
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-search"></i> Filter <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#">Programs</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Profiles</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>   
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+          <input type="text" class="form-control" placeholder="Search projects, students, teachers, etc.">
+          <button type="submit" class="btn btn-primary">Submit</button>      
+        </div>
       </form>
-      <div class="navbar-collapse collapse">  
+    
+      <div class="navbar-collapse collapse">        
         <ul class="nav navbar-right navbar-nav">
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <?=$this->Session->read('Auth.User.fname')?>&nbsp;<?=$this->Session->read('Auth.User.lname')?>&nbsp;
+                <i class="glyphicon glyphicon-user"></i>&nbsp;<i class="glyphicon glyphicon-chevron-down"></i>&nbsp;&nbsp;</a>
             <ul class="dropdown-menu">
               <li><a href="#">Admin</a></li>
               <li><a href="#">Privacy</a></li>
@@ -30,6 +43,4 @@
           </li>
         </ul>
       </div>
-       
-    </div>
 </nav><!-- /.navbar -->
