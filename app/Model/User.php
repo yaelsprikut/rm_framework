@@ -42,7 +42,21 @@ class User extends AppModel {
                 'message' => 'Please enter a valid role',
                 'allowEmpty' => false
             )
-        )
+        ),      
+        'program' => array(
+            'valid' => array(
+                'rule' => array('inList', array('T127', 'T141', 'staff')),
+                'message' => 'Please enter a program',
+                'allowEmpty' => false
+            )
+        ),
+        'campus' => array(
+            'valid' => array(
+                'rule' => array('inList', array('sj', 'cl', 'wf')),
+                'message' => 'Please enter a valid role',
+                'allowEmpty' => false
+            )
+        ) 
     );
     
     

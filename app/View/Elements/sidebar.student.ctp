@@ -7,17 +7,17 @@
                 <br>
                 <li class="sidebar-brand">
                     <a href="#">
-                        <?=$this->Session->read('Auth.User.username')?>
+                        <?=$this->Session->read('Auth.User.fname')?>&nbsp;<?=$this->Session->read('Auth.User.lname')?>
                     </a>
                 </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"> My Profile <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <a href="#">View Profile</a>
+                                <?php echo $this->Html->link('My Profile', '../profiles/index'); ?>
                             </li>
                             <li>
-                                <a href="#">Edit Profile</a>
+                                <?php echo $this->Html->link('Edit Profile', '../profiles/edit'); ?>
                             </li>
                         </ul>
                     </li>

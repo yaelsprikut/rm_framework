@@ -11,7 +11,6 @@ class UsersController extends AppController {
         // Allow users to register and logout.
         $this->Auth->allow('add', 'logout');
         //$this->layout = 'student';
-
         
     }
 
@@ -32,8 +31,8 @@ class UsersController extends AppController {
         if ($this->request->is('post')) {
             $this->User->create();
             if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__('The user has been saved'));
-                return $this->redirect(array('action' => 'index'));
+                $this->Session->setFlash(__('<div class="alert alert-success" role="alert">You have registered. Login to complete your profile.</div>'));
+                return $this->redirect(array('action' => '#login'));
             }
             $this->Session->setFlash(
                 __('The user could not be saved. Please, try again.')
