@@ -17,12 +17,25 @@ class Profile extends AppModel{
         'bio' => array(
             'rule' => 'notEmpty'   
         ),
-        'workexperience' => array(
+         'semester' => array(
+            'rule' => 'notEmpty'   
+        ),
+        'work_experience' => array(
             'rule' => 'notEmpty'
         ),
-        'researchexperience' => array(
+        'research_experience' => array(
+            'rule' => 'notEmpty'
+        ),
+         'education' => array(
+            'rule' => 'notEmpty'
+        ),
+         'projects_applied' => array(
+            'rule' => 'notEmpty'
+        ),
+         'tags' => array(
             'rule' => 'notEmpty'
         )
+         
     );
     
     public function isOwnedBy($profile, $user) {

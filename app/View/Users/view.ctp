@@ -1,14 +1,11 @@
 <!-- File: /app/View/Users/view.ctp -->
 
-
-
-
-<!-- right content column-->
       		<div class="col-md-10" id="content">
                     <?php echo $this->element('header');?>  
             	<div class="panel">
     			<div class="panel-heading" style="background-color:#0065A4;color:#eee;">Personal Information</div>   
               	<div class="panel-body">
+                    <?php echo $this->Session->flash(); ?>
                     <br>
                     <div class="container">
                 <div class="no-gutter row">           
@@ -30,13 +27,13 @@
                     <div> 
                         <h3>Work Experience</h3>
                         <div>
-                        <?php echo $user['Profile']['workexperience']; ?>
+                        <?php echo $user['Profile']['work_experience']; ?>
                         </div>
                     </div>
                 <hr>
                     <div> 
                         <h3>Research Experience</h3>
-                        <?php echo $user['Profile']['researchexperience']; ?>
+                        <?php echo $user['Profile']['research_experience']; ?>
                     </div>
                 <hr>
                     <div class="well"> 

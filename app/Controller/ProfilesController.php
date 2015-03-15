@@ -46,8 +46,9 @@ class ProfilesController extends AppController{
         if ($this->request->is(array('profile', 'put'))) {
             $this->Profile->id = $id;
             if ($this->Profile->save($this->request->data)) {
-                $this->Session->setFlash(__('Your profile has been updated.'));
-                return $this->redirect(array('action' => 'index'));
+                $this->Session->setFlash(__('<div class="alert alert-success" role="alert">Your profile '
+                        . '                     has been successfully updated.</div>'));
+                return $this->redirect(array('controller'=> 'user', 'action' => 'view', $profile['User']['id']));
             }
             $this->Session->setFlash(__('Unable to update your profile.'));
         }

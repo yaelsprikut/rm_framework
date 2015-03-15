@@ -35,7 +35,11 @@ class UsersController extends AppController {
                 return $this->redirect(array('action' => '../#login'));
             }
             $this->Session->setFlash(
-                __('The user could not be saved. Please, try again.')
+                __('<div class="alert alert-danger" role="alert">
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only">Error:</span>
+                            Your account could not be registered.
+                          </div>')
             );
         }
     }
@@ -52,7 +56,11 @@ class UsersController extends AppController {
                              
             }
             $this->Session->setFlash(
-                __('The user could not be saved. Please, try again.')
+                __('<div class="alert alert-danger" role="alert">
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only">Error:</span>
+                            Oops, something went wrong. Please try again.
+                          </div>')
             );
         } else {
             $this->request->data = $this->User->read(null, $id);

@@ -13,11 +13,11 @@
         <div class="col-xs-12 col-sm-6 col-md-6">  
             
 <div class="container">
-    <h3>Edit Profile</h3>
-  	<hr>
-	<div class="row">
+    	<div class="row">
       <!-- left column -->
       <div class="col-md-3">
+              <br><br>
+              <br><br>
         <div class="text-center">
           <img src="http://placehold.it/400x400" alt="" class="img-rounded img-responsive" />
           <h6>Upload a different photo...</h6>
@@ -28,34 +28,33 @@
       
       <!-- edit form column -->
       <div class="col-md-7 personal-info">
-        <div class="alert alert-info alert-dismissable">
-          <a class="panel-close close" data-dismiss="alert">×</a> 
-          <i class="fa fa-coffee"></i>
-          This is an <strong>.alert</strong>. Use this to show important messages to the user.
-        </div>
-        <h3>Personal Information</h3>
+        <?php echo $this->Session->flash(); ?>
+        <h2>Personal Information</h2>
         <hr>
+        <div class="well well-sm">
+        <br>
+        <br>
         <form class="form-horizontal" role="form">
           <div class="form-group">
-            <label class="col-lg-3 control-label">First name:</label>
+            <label class="col-lg-3 control-label">Semester:</label>
             <div class="col-md-8">
               <?php
-                        echo $this->Form->input('fname',array(
+                        echo $this->Form->input('semester',array(
                               'label' => false,
                               'class' => 'form-control',
-                              'placeholder' => 'First Name',
+                              'placeholder' => 'Semester',
                               'div' => false));
                         ?><br>
             </div>
           </div>
           <div class="form-group">
-            <label class="col-lg-3 control-label">Last name:</label>
+            <label class="col-lg-3 control-label">Education:</label>
             <div class="col-lg-8">
                 <?php
-                        echo $this->Form->input('lname',array(
+                        echo $this->Form->input('education',array(
                               'label' => false,
                               'class' => 'form-control',
-                              'placeholder' => 'Last Name',
+                              'placeholder' => 'Education',
                               'div' => false));
                         ?><br>
             </div>
@@ -96,16 +95,17 @@
                         ?><br>
             </div>
           </div>
-
             <br><!---------------------WORK EXPERIENCE ------------------------------->
+
             
-            <h3>Work and Research Experience</h3>
             <hr>
+            <h3>Work and Research Experience</h3>    
+        </div><!---WELL----->
             <div class="form-group">
-            <label class="col-md-3 control-label">Previous Employment:</label>
+            <label class="col-md-4 control-label">Previous Employment:</label>
             <div class="col-md-8">
               <?php
-                        echo $this->Form->textarea('Profile.workexperience',array(
+                        echo $this->Form->textarea('Profile.work_experience',array(
                               'label' => false,
                               'rows' => '5',
                               'class' => 'form-control input-md',
@@ -115,10 +115,10 @@
             </div>
           </div>
             <div class="form-group">
-            <label class="col-md-3 control-label">Research Experience:</label>
+            <label class="col-md-4 control-label">Research Experience:</label>
             <div class="col-md-8">
               <?php
-                        echo $this->Form->textarea('Profile.researchexperience',array(
+                        echo $this->Form->textarea('Profile.research_experience',array(
                               'label' => false,
                               'rows' => '5',
                               'class' => 'form-control',
@@ -136,7 +136,7 @@
           </div>
           </div>
           <div class="form-group">
-            <label class="col-md-3 control-label"></label>
+            <label class="col-md-4 control-label"></label>
             <div class="col-md-8">
                <?php
                         echo $this->Form->submit('Save Changes',array(
@@ -148,7 +148,6 @@
             </div>
           </div>
             <br> <!---------------------MONSTER TAGS ------------------------------->
-
         </form>
       </div>
   </div>
