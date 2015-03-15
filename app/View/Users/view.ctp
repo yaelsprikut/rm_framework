@@ -1,19 +1,21 @@
 <!-- File: /app/View/Users/view.ctp -->
 
 
-<?=$this->Session->read('Auth.User.id')?>&nbsp;
+
 
 <!-- right content column-->
       		<div class="col-md-10" id="content">
+                    <?php echo $this->element('header');?>  
             	<div class="panel">
-    			<div class="panel-heading" style="background-color:#001e31;color:#eee;">Personal Information</div>   
+    			<div class="panel-heading" style="background-color:#0065A4;color:#eee;">Personal Information</div>   
               	<div class="panel-body">
+                    <br>
                     <div class="container">
                 <div class="no-gutter row">           
         <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-8">  
-            
+        <div class="col-xs-12 col-sm-6 col-md-7">     
             <div class="well well-md">
+                <br>   
                 <!------------ STUDENT BADGE -------------------->
                 <?php echo $this->element('badge.student');?> 
                 

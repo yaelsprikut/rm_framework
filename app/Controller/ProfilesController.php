@@ -82,7 +82,7 @@ class ProfilesController extends AppController{
     }
 
     // The owner of a post can edit and delete it
-    if (in_array($this->action, array('view', 'edit', 'delete'))) {
+    if (in_array($this->action, array('edit', 'delete'))) {
         $profileId = (int) $this->request->params['pass'][0];
         if ($this->Profile->isOwnedBy($profileId, $user['id'])) {
             return true;
@@ -93,3 +93,4 @@ class ProfilesController extends AppController{
     }
 }
 
+    

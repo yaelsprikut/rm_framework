@@ -47,8 +47,9 @@ class UsersController extends AppController {
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__('The user has been saved'));
-                return $this->redirect(array('action' => 'index'));
+                   $this->Session->write('Auth.User', array_merge(AuthComponent::User(), $this->request->data['User']) ); 
+                   return $this->redirect(array('action' => 'index'));
+                             
             }
             $this->Session->setFlash(
                 __('The user could not be saved. Please, try again.')
@@ -60,10 +61,8 @@ class UsersController extends AppController {
     }
 
     public function delete($id = null) {
-        // Prior to 2.5 use
-         //$this->request->onlyAllow('post');
 
-        $this->request->allowMethod('post');
+        //$this->request->allowMethod('get');
 
         $this->User->id = $id;
         if (!$this->User->exists()) {
@@ -99,8 +98,25 @@ class UsersController extends AppController {
             $this->redirect('../'); //redirects back to index
                                
         }
+        
+     public function isAuthorized($user){
+    // Admin can access every action
+        $this->set('current_user', $this->Auth->user());
+
+        if ($this->action === 'add') {
+            return true;
+        }
+        if(in_array($this->action, array('edit', 'delete'))){
+            if($this->request->params['pass'][0] == $user['id']){         
+            return true;
+            } 
+        }
+        return false;
+        }
+        
+        
 
 }
 
-?>
+
 

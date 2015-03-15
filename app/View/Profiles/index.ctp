@@ -1,5 +1,4 @@
 <!-- File: /app/View/Posts/index.ctp -->
-<?=$this->Session->read('Auth.User.id')?>
 <h1>Profiles</h1>
 <p><?php echo $this->Html->link('Add Profile', array('action' => 'add')); ?></p>
 <table>

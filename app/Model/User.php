@@ -6,7 +6,7 @@ App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
 
 class User extends AppModel {
     
-    public $hasOne = array('Profile');
+    public $hasOne = 'Profile';
     //public $belongsTo = array('Program');
     
     public $validate = array(
@@ -73,7 +73,8 @@ class User extends AppModel {
         }
         return true;
     }
+
 }
 
-?>
+
 

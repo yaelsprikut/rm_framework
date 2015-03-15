@@ -7,12 +7,13 @@
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th>id</th>
+                        <th>user_id</th>
 			<th>name</th>
 			<th>username</th>
 			<th>email</th>
 			<th class="actions">Actions</th>
 	</tr>
-	<?php
+	<?php 
 	$i = 0;
 	foreach ($users as $user):
 		$class = null;
@@ -22,10 +23,10 @@
 	?>
 	<tr<?php echo $class;?>>
 		<td><?php echo $user['User']['id']; ?>&nbsp;</td>
-		
+                <td><?php echo $user['Profile']['user_id']; ?></td>
 		<td><?php echo $user['User']['username']; ?>&nbsp;</td>
 		<td><?php echo $user['User']['password']; ?>&nbsp;</td>
-		<td class="actions">
+			<td class="actions">
 			<?php echo $this->Html->link('View', array('action' => 'view', $user['User']['id'])); ?>
 			<?php if ($current_user['id'] == $user['User']['id'] || $current_user['role'] == 'admin'): ?>
 			    <?php echo $this->Html->link('Edit', array('action' => 'edit', $user['User']['id'])); ?>

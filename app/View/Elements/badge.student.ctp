@@ -1,8 +1,8 @@
                 <div class="row">
-                    <div class="col-sm-6 col-md-4">
+                    <div class="col-sm-7 col-md-4">
                          <img src="http://placehold.it/300x300" alt="" class="img-rounded img-responsive" />
                     </div>
-                    <div class="col-sm-6 col-md-8">
+                    <div class="col-sm-5 col-md-5">
                         <!-- Contact Info -->
                         <h3><b><?php echo $user['User']['fname']; ?>&nbsp;<?php echo $user['User']['lname']; ?></b></h3>
                         <p>

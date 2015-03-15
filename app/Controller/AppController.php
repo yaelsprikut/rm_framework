@@ -23,11 +23,7 @@ class AppController extends Controller {
     'Session',
     'Auth' => array(
         'loginRedirect' => array('controller' => 'profiles', 'action' => 'index'),
-        'logoutRedirect' => array(
-            'controller' => 'pages',
-            'action' => 'display',
-            'home'
-        ),
+        'logoutRedirect' => array('controller' => 'pages','action' => 'display','home'),
         'authenticate' => array(
             'Form' => array(
                 'passwordHasher' => 'Blowfish'
@@ -38,24 +34,24 @@ class AppController extends Controller {
 );
     public function isAuthorized($user) {
     // Admin can access every action
+    $this->set('current_user', $this->Auth->user());
+    
     if (isset($user['role']) && $user['role'] === 'admin') {
         return true;
     }
-
-    // Default deny
+   // Default deny
     return false;
     }
     
 
  public function beforeFilter() {
-        
-        $this->Auth->allow('index', 'view'); //changed 'index' to 'display' to view homepage
-        $this->set('logged_in', $this->Auth->loggedIn());
-        $this->set('current_user', $this->Auth->user());
+                
         
         //login layout by user
         $user = $this->Auth->user();
-        //$profile = $this->Auth->user('id');
+        $this->Auth->allow('index', 'view'); //changed 'index' to 'display' to view homepage
+        $this->set('logged_in', $this->Auth->loggedIn());
+        $this->set('current_user', $this->Auth->user());
         
         if($user['role'] == 'student'){
             $this->layout = 'student';
