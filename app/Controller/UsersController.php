@@ -5,7 +5,7 @@
 App::uses('AppController', 'Controller');
 
 class UsersController extends AppController {
-
+    
     public function beforeFilter() {
         parent::beforeFilter();
         // Allow users to register and logout.
@@ -16,6 +16,8 @@ class UsersController extends AppController {
     public function index() {
         $this->User->recursive = 0;
         $this->set('users', $this->paginate());
+//        $data = $this->User->Program->find('list', array('fields' => array('id','ProgramName')));
+//        $this->set('programs', $data);
 
     }
 
@@ -50,7 +52,8 @@ class UsersController extends AppController {
             throw new NotFoundException(__('Invalid user'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
-            if ($this->User->save($this->request->data)) {
+            if ($this->User->Profile->save($this->request->data) && $this->User->save($this->request->data)) {
+                //debug($this->request->data);
                    $this->Session->write('Auth.User', array_merge(AuthComponent::User(), $this->request->data['User']) ); 
                    return $this->redirect(array('action' => 'index'));
                              
@@ -86,10 +89,9 @@ class UsersController extends AppController {
 
         public function login() {
             if ($this->request->is('post')) {
-                if ($this->Auth->login()) {
-                    
+                if ($this->Auth->login()) {                                      
                     return $this->redirect(
-                    array('controller' => 'posts', 'action' => 'index')
+                    array('controller' => 'profiles', 'action' => 'index')
                     );
                 }
                 $this->Session->setFlash(__('<div class="alert alert-danger" role="alert">
@@ -115,7 +117,7 @@ class UsersController extends AppController {
             return true;
         }
         if(in_array($this->action, array('edit', 'delete'))){
-            if($this->request->params['pass'][0] == $user['id']){         
+            if($this->request->params['pass'][0] == $user['id'] || $user['role'] === 'admin'){         
             return true;
             } 
         }

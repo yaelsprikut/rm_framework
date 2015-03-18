@@ -1,7 +1,7 @@
 <!-- File: /app/View/Posts/index.ctp -->
 <h1>Profiles</h1>
 <p><?php echo $this->Html->link('Add Profile', array('action' => 'add')); ?></p>
-<table>
+<table class="table table-striped">
     <tr>
         <th>Id</th>
         <th>user_id</th>
@@ -12,8 +12,9 @@
 
 <!-- Here's where we loop through our $posts array, printing out post info -->
 
+
     <?php foreach ($profiles as $profile): ?>
-    
+    <?php //debug($profile); ?>
     <tr>
         <td><?php echo $profile['Profile']['id']; ?></td>
         <td><?php echo $profile['Profile']['user_id']; ?></td>

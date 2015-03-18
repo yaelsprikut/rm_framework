@@ -1,6 +1,6 @@
 <!-- File: /app/View/Users/view.ctp -->
 
-      		<div class="col-md-10" id="content">
+      		<div class="col-md-12" id="content">
                     <?php echo $this->element('header');?>  
             	<div class="panel">
     			<div class="panel-heading" style="background-color:#0065A4;color:#eee;">Personal Information</div>   
@@ -25,15 +25,17 @@
                     <?php echo $user['Profile']['bio']; ?>
                   </div>
                     <div> 
-                        <h3>Work Experience</h3>
+                        <h4>Work Experience</h4>
                         <div>
                         <?php echo $user['Profile']['work_experience']; ?>
                         </div>
                     </div>
                 <hr>
-                    <div> 
-                        <h3>Research Experience</h3>
+                    <div>  
+                        <h4>Research Experience</h4>
+                        <div>
                         <?php echo $user['Profile']['research_experience']; ?>
+                        </div>
                     </div>
                 <hr>
                     <div class="well"> 
@@ -44,10 +46,9 @@
                     <button class="btn btn-primary">#HTML</button>
                   </div>
             </div><!---end of col-xs-12 col-sm-6 col-md-6--->
-            <!---RSS FEED -->
-            <?php echo $this->element('column');?> 
+                        <?php echo $this->element('column');?> <!---RSS FEED -->
         </div><!---end of row--->
-    </div><!---end of no-gutter row--->            
+    </div><!---end of no-gutter row---> 
 </div><!---end of container--->   
             
              	

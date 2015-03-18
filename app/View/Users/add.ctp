@@ -1,5 +1,10 @@
 <?php $cakeDescription = __d('cake_dev', 'Research Monster');
-      $this->layout = 'register';  ?>
+if($current_user['role'] == 'admin'){
+    $this->layout = 'admin'; 
+}else{
+    $this->layout = 'register'; 
+}      
+ ?>
     <?php echo $this->Form->create('User');
           
     ?>

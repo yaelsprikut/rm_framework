@@ -46,9 +46,10 @@ class ProfilesController extends AppController{
         if ($this->request->is(array('profile', 'put'))) {
             $this->Profile->id = $id;
             if ($this->Profile->save($this->request->data)) {
-                $this->Session->setFlash(__('<div class="alert alert-success" role="alert">Your profile '
+                $this->Session->setFlash(__('<div class="alert alert-success alert-dismissible" role="alert">'
+                        . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Your profile '
                         . '                     has been successfully updated.</div>'));
-                return $this->redirect(array('controller'=> 'user', 'action' => 'view', $profile['User']['id']));
+                return $this->redirect(array('controller'=> 'users', 'action' => 'view', $this->Auth->user('id')));
             }
             $this->Session->setFlash(__('Unable to update your profile.'));
         }
@@ -77,9 +78,12 @@ class ProfilesController extends AppController{
     }
     
    public function isAuthorized($user) {
-    // All registered users can add posts
+    // All registered users can add profiles
     if ($this->action === 'add') {
-        return true;
+        if($user['Profile']['user_id'] == null){
+           return true;           
+        }
+          
     }
 
     // The owner of a post can edit and delete it

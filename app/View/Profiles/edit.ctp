@@ -1,8 +1,8 @@
 
-<?php echo $this->Form->create('Profile');?>
+<?php echo $this->Form->create('Profile', array('type' => 'file'));?>
 <?php //echo $this->Html->link('List Users', array('action' => 'index'));?>
 <!-- right content column-->
-      		<div class="col-md-10" id="content">
+      		<div class="col-md-12" id="content">
                     <?php echo $this->element('header');?> 
             	<div class="panel">
     			<div class="panel-heading" style="background-color:#0065A4;color:#eee;">Edit Profile</div>   
@@ -38,13 +38,12 @@
           <div class="form-group">
             <label class="col-lg-3 control-label">Semester:</label>
             <div class="col-md-8">
-              <?php
-                        echo $this->Form->input('semester',array(
-                              'label' => false,
-                              'class' => 'form-control',
-                              'placeholder' => 'Semester',
-                              'div' => false));
-                        ?><br>
+              <?php echo $this->Form->input('semester', 
+                               array(
+                                   'label' => false,
+                                   'class' => 'form-control',
+                                   'placeholder' => 'Select your campus',
+                                   'options' => array('first' => 'First Year', 'second' => 'Second Year', 'third' => 'Third Year' ))); ?><br>
             </div>
           </div>
           <div class="form-group">
@@ -62,20 +61,24 @@
           <div class="form-group">
             <label class="col-lg-3 control-label">Program Name:</label>
             <div class="col-lg-8">
+                <?php //echo $this->Form->input('Program.ProgramName'); ?>
               <div class="ui-select">
                 <select id="program" class="form-control">
-                  <option>Please select your program...</option>
+                  
+                  
                             <?php
-                                $connection = mysql_connect("localhost", "root", "");
-                                $db = mysql_select_db("rm", $connection);
 
-                                $query = "SELECT id, ProgramName FROM programs";
-                                $result = mysql_query ($query);
-                                while($r = mysql_fetch_array($result))
-                                {
-                                echo "<option value=".$r["id"].">".$r["ProgramName"]."</option>"; 
-                                }
-                                echo "</select>";
+//                                $connection = mysql_connect("localhost", "root", "");
+//                                $db = mysql_select_db("rm", $connection);
+//
+//                                $query = "SELECT id, ProgramName FROM programs";
+//                                $result = mysql_query ($query);
+//                                while($r = mysql_fetch_array($result))
+//                                {
+//                                echo "<option value=".$r["id"].">".$r["ProgramName"]."</option>"; 
+//                                }
+//                                echo "</select>";
+                            
                                 ?>         
                 </select>
                   <br>

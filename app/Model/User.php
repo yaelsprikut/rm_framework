@@ -7,7 +7,12 @@ App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
 class User extends AppModel {
     
     public $hasOne = 'Profile';
-    //public $belongsTo = array('Program');
+    public $belongsTo = array(
+        'Program' => array(
+            'className' => 'Program',
+            'foreignKey' => 'program_id'
+        )
+    );
     
     public $validate = array(
         'fname' => array(
@@ -47,13 +52,6 @@ class User extends AppModel {
                 'allowEmpty' => false
             )
         ),      
-        'program' => array(
-            'valid' => array(
-                'rule' => array('inList', array('T127', 'T141', 'staff')),
-                'message' => 'Please enter a program',
-                'allowEmpty' => false
-            )
-        ),
         'campus' => array(
             'valid' => array(
                 'rule' => array('inList', array('St. James', 'Casa Loma', 'Waterfront')),

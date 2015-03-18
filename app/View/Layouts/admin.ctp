@@ -1,4 +1,4 @@
-<!---This navbar only appears for ADMINS--->
+<?php $cakeDescription = __d('cake_dev', 'GBC Research Monster'); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,11 +6,11 @@
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		<?php echo $cakeDescription ?>:
+		<?php echo $cakeDescription ?>: Dashboard
 		<?php echo $this->fetch('title'); ?>
 	</title>
 	<?php           
-        echo $this->Html->css(array('bootstrap.min', 'styles', 'sb-admin'));
+        echo $this->Html->css(array('bootstrap.min', 'styles','sb-admin', 'font-awesome.min'));
         echo $this->fetch('meta');
         echo $this->fetch('css');
         echo $this->fetch('script');
@@ -139,17 +139,16 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li class="active">
-                        <?php echo $this->Html->link('Register', '../users/add'); ?>
+                    
+                    
+                    <li>
+                        <?php echo $this->Html->link('Users', '../users/index'); ?>
                     </li>
                     <li>
-                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                        <?php echo $this->Html->link('Profiles', '../profiles/index'); ?>
                     </li>
                     <li>
-                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
-                    </li>
-                    <li>
-                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
+                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Projects</a>
                     </li>
                     <li>
                         <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
@@ -163,16 +162,10 @@
                             <li>
                                 <a href="#">Dropdown Item</a>
                             </li>
-                            <li>
-                                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
-                            </li>
                         </ul>
                     </li>
                     <li>
                         <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                    </li>
-                    <li>
-                        <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
                     </li>
                 </ul>
             </div>
@@ -200,9 +193,6 @@
 
 
 </body>
-<footer>
-    <?php echo $this->element('footer');?>
-</footer>
      <?php      
          echo $this->Html->script(array('jquery', 'bootstrap.min', 'scripts'));
          echo $this->fetch('script'); 

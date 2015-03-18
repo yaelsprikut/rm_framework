@@ -1,8 +1,8 @@
 <?php
 
 class Profile extends AppModel{
-    
-        public $belongsTo = 'User';
+        //public $belongsTo = 'User';
+ //       public $hasOne = 'User';
 //      public $belongsTo = array(
 //        'User' => array(
 //            'className' => 'User',

@@ -1,16 +1,18 @@
 <?php    
    // $program = $this->Program->find('list');
     //Debugger::dump($program);   
+        
      ?>
+
     <div class="users index">
 	<h2>Users</h2>
-	<table cellpadding="0" cellspacing="0">
+	<table class="table table-striped">
 	<tr>
 			<th>id</th>
-                        <th>user_id</th>
-			<th>name</th>
-			<th>username</th>
-			<th>email</th>
+                        <th>Program Name</th>
+			<th>Profile ID</th>
+			<th>E-mail (username)</th>
+			<th>Program ID</th>
 			<th class="actions">Actions</th>
 	</tr>
 	<?php 
@@ -23,9 +25,10 @@
 	?>
 	<tr<?php echo $class;?>>
 		<td><?php echo $user['User']['id']; ?>&nbsp;</td>
+                <td><?php echo $user['Program']['ProgramName']; ?>&nbsp;</td>
                 <td><?php echo $user['Profile']['user_id']; ?></td>
 		<td><?php echo $user['User']['username']; ?>&nbsp;</td>
-		<td><?php echo $user['User']['password']; ?>&nbsp;</td>
+		<td><?php echo $user['User']['program_id']; ?>&nbsp;</td>
 			<td class="actions">
 			<?php echo $this->Html->link('View', array('action' => 'view', $user['User']['id'])); ?>
 			<?php if ($current_user['id'] == $user['User']['id'] || $current_user['role'] == 'admin'): ?>
