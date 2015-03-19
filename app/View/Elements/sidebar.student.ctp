@@ -11,7 +11,7 @@
                     </a>
                 </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#profile"> <b>My Profile </b><i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#profile"><i class="glyphicon glyphicon-user"></i>&nbsp;<b> My Profile </b><i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="profile" class="collapse">
                             <li>
                                 <?php echo $this->Html->link('View Profile', array('controller' => 'users' , 'action' => 'view', $current_user['id'])); ?>
@@ -26,7 +26,7 @@
                                
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#projects"> <b>My Projects</b> <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#projects"><i class="glyphicon glyphicon-tasks"></i>&nbsp; <b>My Projects</b> <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="projects" class="collapse">
                             <li>
                                 <?php echo $this->Html->link('Recommended Projects', array('controller' => 'posts' , 'action' => 'index')); ?>

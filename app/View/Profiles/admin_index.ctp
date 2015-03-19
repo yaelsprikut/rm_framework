@@ -47,7 +47,7 @@
         <td>
             <?php echo $this->Html->link('View', array('action' => 'edit', $profile['Profile']['id']));?> - 
             <?php echo $this->Html->link('Edit', array('action' => 'edit', $profile['Profile']['id']));?> -
-            <?php echo $this->Form->postLink('Delete',array('action' => 'delete', $profile['Profile']['id']),array('confirm' => 'Are you sure?'));?>
+            <?php echo $this->Form->postLink('Delete',array('admin' => false, 'action' => 'delete', $profile['Profile']['id']),array('confirm' => 'Are you sure?'));?>
         </td>
     </tr>
     <?php endforeach; ?>

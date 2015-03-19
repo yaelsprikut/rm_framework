@@ -18,10 +18,13 @@
             
             <div class="well well-sm">
                 <!------------ STUDENT BADGE -------------------->
-                <?php echo $this->element('badge.student');?> 
                 
+                <?php echo $this->element('badge.student');?> 
+                 
                 <!------------ STUDENT NOTIFICATIONS -------------------->
+
                 <?php echo $this->element('bar.student');?> 
+                
                 </div>
                 <hr>
                   <div class="well"> 

@@ -17,11 +17,20 @@
                 <?php echo $this->element('badge.student');?> 
                 
                 <!------------ STUDENT NOTIFICATIONS -------------------->
+                <?php if ($current_user['id'] == $user['User']['id'] || $current_user['role'] == 'admin'): ?>
                 <?php echo $this->element('bar.student');?> 
+                <?php endif; ?>
                 </div>
                 <hr>
+                    <div> 
+                        <h4>Education</h4>
+                        <div>
+                        <?php echo $user['Profile']['education']; ?>
+                        </div>
+                    </div>
+                <hr>
                   <div class="well"> 
-                    <h3>Professional Summary</h3>
+                    <h4>Professional Summary</h4>
                     <?php echo $user['Profile']['bio']; ?>
                   </div>
                     <div> 
@@ -39,7 +48,8 @@
                     </div>
                 <hr>
                     <div class="well"> 
-                    <h3>Monster Tags</h3>
+                    <h4>Monster Tags</h4>
+                    <hr class='colorgraph'>
                     <button class="btn btn-primary">#CSS</button>
                     <button class="btn btn-primary">#WordPress</button>
                     <button class="btn btn-primary">#PHP</button>
@@ -51,7 +61,7 @@
     </div><!---end of no-gutter row---> 
 </div><!---end of container--->   
             
-             	
+<br>         	
             </div><!--/panel-body-->
           </div><!--/panel-->
         </div><!--/end right column-->

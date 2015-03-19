@@ -11,6 +11,7 @@ class UsersController extends AppController {
         // Allow users to register and logout.
         $this->Auth->allow('add', 'logout');
         
+        
     }
 
     public function index() {
@@ -18,6 +19,12 @@ class UsersController extends AppController {
         $this->set('users', $this->paginate());
 //        $data = $this->User->Program->find('list', array('fields' => array('id','ProgramName')));
 //        $this->set('programs', $data);
+
+    }
+    
+    public function admin_index() {
+        $this->User->recursive = 0;
+        $this->set('users', $this->paginate());
 
     }
 
@@ -35,6 +42,23 @@ class UsersController extends AppController {
             if ($this->User->save($this->request->data)) {
                 $this->Session->setFlash(__('<div class="alert alert-success" role="alert">You have registered. Login to complete your profile.</div>'));
                 return $this->redirect(array('action' => '../#login'));
+            }
+            $this->Session->setFlash(
+                __('<div class="alert alert-danger" role="alert">
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only">Error:</span>
+                            Your account could not be registered.
+                          </div>')
+            );
+        }
+    }
+    
+    public function admin_add() {
+        if ($this->request->is('post')) {
+            $this->User->create();
+            if ($this->User->save($this->request->data)) {
+                $this->Session->setFlash(__('<div class="alert alert-success" role="alert">You have registered. Login to complete your profile.</div>'));
+                return $this->redirect(array('action' => 'index'));
             }
             $this->Session->setFlash(
                 __('<div class="alert alert-danger" role="alert">
@@ -116,16 +140,16 @@ class UsersController extends AppController {
         if ($this->action === 'add') {
             return true;
         }
+        
         if(in_array($this->action, array('edit', 'delete'))){
             if($this->request->params['pass'][0] == $user['id'] || $user['role'] === 'admin'){         
             return true;
             } 
         }
-        return false;
+        return parent::isAuthorized($user); //gives permission to the admin to access everything
         }
+              
         
-        
-
 }
 
 

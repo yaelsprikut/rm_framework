@@ -9,6 +9,10 @@ class ProfilesController extends AppController{
         $this->set('profiles', $this->Profile->find('all'));
     }
     
+    public function admin_index() {
+        $this->set('profiles', $this->Profile->find('all'));
+    }
+    
      public function view($id = null) {
         if (!$id) {
             throw new NotFoundException(__('Invalid profile'));

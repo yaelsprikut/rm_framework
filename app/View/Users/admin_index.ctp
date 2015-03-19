@@ -47,15 +47,29 @@
                             </div>
                             <div class="panel-body">
                                 <div class="list-group">
-                                    <a href="./users/admin.add" class="list-group-item">
-                                        <i class="fa fa-fw fa-user"></i> Create a User
-                                    </a>
-                                    <a href="./users/add" class="list-group-item">
-                                        <i class="fa fa-fw fa-dashboard"></i> Create an Administrator
-                                    </a>
-                                </div>
-                                <li><?php echo $this->Html->link('Create a New User',  array('admin' => true, 'action'=>'add')); ?></li>
-                                <li><?php //echo $this->Html->link('Create an Administrator', array('action' => 'add')); ?></li>
+                                    <?php echo $this->Html->link(
+                                          '<i class="fa fa-fw fa-user"></i> Create a User',
+                                          array(
+                                              'action' => 'add',
+                                              'admin' => true
+                                          ),
+                                          array(                           
+                                              'escape' => false,
+                                              'class' => 'list-group-item'
+                                          ));
+                                        ?>
+                                    <?php echo $this->Html->link(
+                                          '<i class="fa fa-fw fa-dashboard"></i> Create an Administrator',
+                                          array(
+                                              'action' => 'add',
+                                              'admin' => true                                             
+                                          ),
+                                          array(                           
+                                              'escape' => false,
+                                              'class' => 'list-group-item'
+                                          ));
+                                        ?>
+                                </div>                       
                             </div>
                         </div>
                     </div>
@@ -116,7 +130,7 @@
 			<?php echo $this->Html->link('View', array('action' => 'view', $user['User']['id'])); ?> -
 			<?php if ($current_user['id'] == $user['User']['id'] || $current_user['role'] == 'admin'): ?>
 			    <?php echo $this->Html->link('Edit', array('action' => 'edit', $user['User']['id'])); ?> -
-			    <?php echo $this->Form->postLink('Delete', array('action' => 'delete', $user['User']['id']), array('confirm'=>'Are you sure you want to delete that user?')); ?>
+			    <?php echo $this->Form->postLink('Delete', array('admin' => false, 'action' => 'delete', $user['User']['id']), array('confirm'=>'Are you sure you want to delete that user?')); ?>
 		    <?php endif; ?>
 		</td>
 	</tr>

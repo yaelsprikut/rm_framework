@@ -16,14 +16,14 @@
         <div class="input-group">      
         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-search"></i> Filter <span class="caret"></span></button>
         <ul class="dropdown-menu" role="menu">
-          <li><a href="#">Programs</a></li>
-          <li><a href="#">Projects</a></li>
           <li><a href="#">Profiles</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Programs</a></li>
           <li class="divider"></li>
-          <li><a href="#">Separated link</a></li>
+          <li><a href="#">Monster Tags</a></li>
         </ul>   
         </div>
-          <input type="text" class="form-control" placeholder="Search projects, students, teachers, etc.">
+          <input type="text" class="form-control" placeholder="Search projects, students, teachers, tags etc.">
           <button type="submit" class="btn btn-primary">Submit</button>      
         </div>
       </form>
