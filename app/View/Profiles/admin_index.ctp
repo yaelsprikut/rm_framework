@@ -12,18 +12,18 @@
         <div class="well">
         <p>
             This section provides a list of all registered profiles on Research Monster. The administrator 
-            has the ability to view, modify, and delete any profile content provided by any user. In the 
+            has the ability to view and delete any profile content provided by any user. In the 
             event that an administrator decides to deactivate a profile, a notification e-mail will be sent 
             to the user.
         </p>
         <blockquote>
-            The administrator cannot create a profile, however they can make modifications to user accounts.
+            The administrator cannot create a profile, however they can view the profile content and have 
+            the ability to delete any profile that is inactive or goes against the Terms of Agreement as 
+            established through the George Brown College Research Department.
         </blockquote>
         <hr>
         <li><mark>View</mark> - The administrator can view any user profile.</li>
-        <li><mark>Edit</mark> - The administrator can modify any user profile information.</li>
-        <li><mark>Delete</mark> - The administrator can delete any user profile. The profile 
-                associated with the user account will remain in the Research Monster archive.</li>
+        <li><mark>Delete</mark> - The administrator can delete any user profile.</li>
         </div>
         
 	<table class="table table-bordered table-hover table-striped">
@@ -36,8 +36,6 @@
     </tr>
 
 <!-- Here's where we loop through our $posts array, printing out post info -->
-
-
     <?php foreach ($profiles as $profile): ?>
     <?php //debug($profile); ?>
     <tr>
@@ -47,7 +45,6 @@
         <td><?php echo $profile['Profile']['modified']; ?></td>
         <td>
             <?php echo $this->Html->link('View', array('action' => 'edit', $profile['Profile']['id']));?> - 
-            <?php echo $this->Html->link('Edit', array('action' => 'edit', $profile['Profile']['id']));?> -
             <?php echo $this->Form->postLink('Delete',array('admin' => false, 'action' => 'delete', $profile['Profile']['id']),array('confirm' => 'Are you sure?'));?>
         </td>
     </tr>

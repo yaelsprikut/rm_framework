@@ -32,10 +32,10 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#projects"><i class="glyphicon glyphicon-tasks"></i>&nbsp; <b>My Projects</b> <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="projects" class="collapse">
                             <li>
-                                <?php echo $this->Html->link('Recommended Projects', array('controller' => 'projects' , 'action' => 'index')); ?>
+                                <?php echo $this->Html->link('View Projects', array('controller' => 'projects' , 'action' => 'index')); ?>
                             </li>
                             <li>
-                                <?php echo $this->Html->link('Recently Applied', array('controller' => 'users', 'action' => 'edit', $this->Session->read('Auth.User.id'))); ?>
+                                <?php echo $this->Html->link('Create a Project', array('controller' => 'users', 'action' => 'edit', $this->Session->read('Auth.User.id'))); ?>
                             </li>
                             <li>
                                 Saved Projects
@@ -47,9 +47,6 @@
                 </li>
                 <li>
                     <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
                 </li>
                 <li>
                     <h4><?=$this->Session->read('Auth.Profile.user_id')?></h4>

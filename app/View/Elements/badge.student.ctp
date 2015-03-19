@@ -16,7 +16,7 @@
                             <br /></p><br>
                         <!-- Split button -->
                         <div class="btn-group">
-                            <button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-envelope"></i>&nbsp;Send Message</button>
+                            <button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-envelope"></i>&nbsp;Send Invite</button>
                         </div>
                     </div>
                 </div> 

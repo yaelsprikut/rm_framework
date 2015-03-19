@@ -16,6 +16,8 @@ App::uses('Controller', 'Controller');
  * @package		app.Controller
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
+App::uses('CakeEmail', 'Network/Email');
+
 class AppController extends Controller {
     
     //public $helpers = array('Js' => array('Jquery'));
@@ -42,7 +44,7 @@ class AppController extends Controller {
    // Default deny
     return false;
     }
-    
+      
 
  public function beforeFilter() {
                 
@@ -53,17 +55,14 @@ class AppController extends Controller {
         $this->set('logged_in', $this->Auth->loggedIn());
         $this->set('current_user', $this->Auth->user());
         
-        if($user['role'] == 'student'){
-            $this->layout = 'student';
+        if($user['role'] == 'student' || $user['role'] == 'staff' || $user['role'] == 'research'){
+            $this->layout = 'user';
         }else if($user['role'] == 'admin'){
             $this->layout = 'admin';
-        } else if($user['role'] == 'staff'){
-            $this->layout = 'staff';
-        } else{
+        }else{
             $this->layout = 'default';
         }
-        
-        
+                
     }  
       
 }

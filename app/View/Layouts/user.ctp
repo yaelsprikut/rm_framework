@@ -20,7 +20,16 @@
 
 <body>
 <?php echo $this->element('navbar.user');?> 
-<?php echo $this->element('sidebar.student');?> 
+    <?php
+    
+    if($current_user['role'] == 'student'){
+            echo $this->element('sidebar.student');
+        }else if($current_user['role'] == 'staff'){
+            echo $this->element('sidebar.staff');
+        } else if($current_user['role'] == 'research'){
+           echo $this->element('sidebar.research');
+        }   
+    ?>
 
       <?php      
          echo $this->Html->script(array('jquery', 'bootstrap.min', 'scripts'));

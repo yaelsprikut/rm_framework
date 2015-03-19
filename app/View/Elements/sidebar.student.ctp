@@ -10,6 +10,9 @@
                         <b><?=$this->Session->read('Auth.User.fname')?>&nbsp;<?=$this->Session->read('Auth.User.lname')?></b>
                     </a>
                 </li>
+                <li>
+                    <a href="#">Homepage</a>
+                </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#profile"><i class="glyphicon glyphicon-user"></i>&nbsp;<b> My Profile </b><i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="profile" class="collapse">
@@ -29,10 +32,13 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#projects"><i class="glyphicon glyphicon-tasks"></i>&nbsp; <b>My Projects</b> <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="projects" class="collapse">
                             <li>
-                                <?php echo $this->Html->link('Recommended Projects', array('controller' => 'posts' , 'action' => 'index')); ?>
+                                <?php echo $this->Html->link('Recommended Projects', array('controller' => 'projects' , 'action' => 'index')); ?>
                             </li>
                             <li>
                                 <?php echo $this->Html->link('Recently Applied', array('controller' => 'users', 'action' => 'edit', $this->Session->read('Auth.User.id'))); ?>
+                            </li>
+                            <li>
+                                Saved Projects
                             </li>
                         </ul>              
                     </li>

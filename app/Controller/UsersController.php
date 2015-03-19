@@ -111,6 +111,36 @@ class UsersController extends AppController {
             unset($this->request->data['User']['password']);
         }
     }
+    
+    public function admin_edit($id = null) {
+        $this->set('programs', $this->User->Program->find('list', array(
+        'fields' => 'Program.ProgramName')));
+        $this->User->id = $id;
+        if (!$this->User->exists()) {
+            throw new NotFoundException(__('Invalid user'));
+        }
+        if ($this->request->is('post') || $this->request->is('put')) {
+            if ($this->User->Profile->save($this->request->data) && $this->User->save($this->request->data)) {
+                //debug($this->request->data);
+                   $this->Session->write('Auth.User', array_merge(AuthComponent::User(), $this->request->data['User']) ); 
+                   $this->Session->setFlash(__('<div class="alert alert-success alert-dismissible" role="alert">'
+                        . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>The profile '
+                        . '                     has been successfully updated.</div>'));
+                return $this->redirect(array('admin' => true, 'action' => 'index'));
+                             
+            }
+            $this->Session->setFlash(
+                __('<div class="alert alert-danger" role="alert">
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only">Error:</span>
+                            Oops, something went wrong. Please try again.
+                          </div>')
+            );
+        } else {
+            $this->request->data = $this->User->read(null, $id);
+            unset($this->request->data['User']['password']);
+        }
+    }
 
     public function delete($id = null) {
 

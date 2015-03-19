@@ -97,19 +97,6 @@
                         </div>
                     </div>
             </div>
-<div class="btn-group">
-  <button type="button" class="btn btn-primary">Sort Users by Role</button>
-  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-    <span class="caret"></span>
-    <span class="sr-only">Toggle Dropdown</span>
-  </button>
-  <ul class="dropdown-menu" role="menu">
-    <li><a href="#">Student</a></li>
-    <li><a href="#">Staff</a></li>
-    <li><a href="#">Research</a></li>
-    <li class="divider"></li>
-    <li><a href="#">Admin</a></li>
-  </ul>
         <br><br>
 	<table class="table table-bordered table-hover table-striped">
 	<tr>
