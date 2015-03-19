@@ -1,5 +1,6 @@
 <h3>Control Panel: Profiles</h3>
         <hr>
+        <?php echo $this->Session->flash(); ?>
         <ol class="breadcrumb">
                             <li>
                                 <i class="fa fa-dashboard"></i>  <a href="">Dashboard</a>

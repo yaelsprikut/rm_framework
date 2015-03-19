@@ -6,6 +6,7 @@ class ProgramsController extends AppController {
     
     public function index() {
         $this->set('programs', $this->Program->find('all'));
+        
       
     }
     

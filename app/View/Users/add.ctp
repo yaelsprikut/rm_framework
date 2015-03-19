@@ -69,7 +69,7 @@ if($current_user['role'] == 'admin'){
                     </div> 
                     <div class="form-group"> 
                         <div class="col-xs-12">
-                        <label for="InputEmail">Enter Email</label>
+                            <label for="InputEmail">Enter Email</label><small> <mark>(This will be used as your login username.)</mark></small>
                         <div class="input-group">
                         <?php
                         echo $this->Form->input('username',array(
@@ -88,12 +88,12 @@ if($current_user['role'] == 'admin'){
                         <div class="col-xs-12">
                         <label for="InputStreetName">Select Your Program</label>
                         <div class="input-group">
-                        <?php echo $this->Form->input('programs', 
+                        <?php echo $this->Form->input('program_id', 
                                array(
                                    'label' => false,
                                    'class' => 'form-control',
                                    'placeholder' => 'Select your program',
-                                   'options' => array('programs' => 'ProgramName'))); ?>
+                                   'options' => array('Please select a program...' => $programs))); ?>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                         </div>
 <!----------------------------break-------------------------------------------------------------> <br> 
@@ -112,18 +112,37 @@ if($current_user['role'] == 'admin'){
                                    'options' => array('St. James' => 'St. James', 'Casa Loma' => 'Casa Loma', 'Waterfront' => 'Waterfront' ))); ?>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                     </div>
+                        
+
 <!----------------------------break-------------------------------------------------------------> <br> 
                     </div>
                     </div>
-        <?php echo $this->Form->input('role', array(
-            'options' => array('admin' => 'Admin', 'student' => 'Student')
-        ));?>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                        <label for="InputCity">User Role</label>
+                        <div class="input-group">
+                      <?php
+                        echo $this->Form->input('role', array(
+                        'options' => array(                    
+                        'student' => 'Student', 
+                            'staff' => 'Staff', 
+                            'research' => 'Research'),
+                              'label' => false,
+                              'class' => 'form-control input-md'             
+                    ));                   
+                    ?>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                        
+
+<!----------------------------break-------------------------------------------------------------> <br> 
+                    </div>
+                    </div>
                   <div class="form-group">
-                  
                                 <?php
                         echo $this->Form->submit('Register',array(
                               'class' => 'btn btn-lg btn-success btn-block',
                               'div' => false));
                         ?>
-                </div>
-                </form>
+                  </div>
+        </form>

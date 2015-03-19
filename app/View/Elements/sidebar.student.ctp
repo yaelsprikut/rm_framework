@@ -14,13 +14,13 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#profile"><i class="glyphicon glyphicon-user"></i>&nbsp;<b> My Profile </b><i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="profile" class="collapse">
                             <li>
-                                <?php echo $this->Html->link('View Profile', array('controller' => 'users' , 'action' => 'view', $current_user['id'])); ?>
+                                <?php echo $this->Html->link('View Profile', array('admin' => false, 'controller' => 'users' , 'action' => 'view', $current_user['id'])); ?>
                             </li>
                             <li>
-                                <?php echo $this->Html->link('Edit Profile', array('controller' => 'profiles', 'action' => 'edit', $current_user['Profile']['id']));?>
+                                <?php echo $this->Html->link('Edit Profile', array('admin' => false, 'controller' => 'users', 'action' => 'edit', $current_user['id']));?>
                             </li>
                             <li>
-                                <?php echo $this->Html->link('Manage Your Account', array('controller' => 'users', 'action' => 'edit', $current_user['id']));?>
+                                <?php echo $this->Html->link('Manage Your Account', array('admin' => false, 'controller' => 'users', 'action' => 'edit', $current_user['id']));?>
                             </li>
                         </ul>
                                
@@ -56,10 +56,8 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <?php echo $this->fetch('content'); ?>
-                        <?php echo $this->element('sql_dump'); ?>
+                        <?php //echo $this->element('sql_dump'); ?>
                         <br>
-                        
-                        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
                         
                     </div>
                 </div>

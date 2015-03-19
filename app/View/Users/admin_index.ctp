@@ -7,6 +7,7 @@
 
 <h3>Control Panel: Users </h3>
         <hr>
+        <?php echo $this->Session->flash(); ?>
         <ol class="breadcrumb">
                             <li>
                                 <i class="fa fa-dashboard"></i>  <a href="">Dashboard</a>
@@ -96,7 +97,20 @@
                         </div>
                     </div>
             </div>
-        <br>
+<div class="btn-group">
+  <button type="button" class="btn btn-primary">Sort Users by Role</button>
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    <span class="caret"></span>
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="#">Student</a></li>
+    <li><a href="#">Staff</a></li>
+    <li><a href="#">Research</a></li>
+    <li class="divider"></li>
+    <li><a href="#">Admin</a></li>
+  </ul>
+        <br><br>
 	<table class="table table-bordered table-hover table-striped">
 	<tr>
 			<th>User ID</th>
@@ -118,6 +132,7 @@
 		}
 	?>
 	<tr<?php echo $class;?>>
+            
 		<td><?php echo $user['User']['id']; ?>&nbsp;</td>
                 <td><?php echo $user['User']['role']; ?>&nbsp;</td>
                 <td><?php echo $user['User']['fname']; ?>&nbsp;</td>
@@ -127,7 +142,7 @@
                 <td><?php echo $user['User']['created']; ?></td>
 		<td><?php echo $user['User']['modified']; ?>&nbsp;</td>
 			<td class="actions">
-			<?php echo $this->Html->link('View', array('action' => 'view', $user['User']['id'])); ?> -
+			<?php echo $this->Html->link('View', array('admin' => false, 'action' => 'view', $user['User']['id'])); ?> -
 			<?php if ($current_user['id'] == $user['User']['id'] || $current_user['role'] == 'admin'): ?>
 			    <?php echo $this->Html->link('Edit', array('action' => 'edit', $user['User']['id'])); ?> -
 			    <?php echo $this->Form->postLink('Delete', array('admin' => false, 'action' => 'delete', $user['User']['id']), array('confirm'=>'Are you sure you want to delete that user?')); ?>

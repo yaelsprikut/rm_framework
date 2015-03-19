@@ -70,7 +70,10 @@ class ProfilesController extends AppController{
 
     if ($this->Profile->delete($id)) {
         $this->Session->setFlash(
-            __('The profile with id: %s has been deleted.', h($id))
+            __('<div class="alert alert-warning" role="alert">
+                            <span class="sr-only">Error:</span>
+                            The profile with id: %s was deleted.
+                          </div>', h($id))
         );
     } else {
         $this->Session->setFlash(
@@ -78,7 +81,7 @@ class ProfilesController extends AppController{
         );
     }
 
-    return $this->redirect(array('action' => 'index'));
+    return $this->redirect(array('admin' => true, 'action' => 'index'));
     }
     
    public function isAuthorized($user) {

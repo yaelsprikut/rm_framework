@@ -5,7 +5,7 @@
 App::uses('AppController', 'Controller');
 
 class UsersController extends AppController {
-    
+       
     public function beforeFilter() {
         parent::beforeFilter();
         // Allow users to register and logout.
@@ -25,6 +25,16 @@ class UsersController extends AppController {
     public function admin_index() {
         $this->User->recursive = 0;
         $this->set('users', $this->paginate());
+        $this->set('programs', $this->User->Program->find('list', array(
+        'fields' => 'Program.ProgramName')));
+        $this->set('students', $this->User->find('list', array(
+        'conditions' => array('User.role' => 'student'))));
+        $this->set('staff', $this->User->find('list', array(
+        'conditions' => array('User.role' => 'staff'))));
+        $this->set('research', $this->User->find('list', array(
+        'conditions' => array('User.role' => 'research'))));
+        
+        
 
     }
 
@@ -37,6 +47,8 @@ class UsersController extends AppController {
     }
 
     public function add() {
+        $this->set('programs', $this->User->Program->find('list', array(
+        'fields' => 'Program.ProgramName')));
         if ($this->request->is('post')) {
             $this->User->create();
             if ($this->User->save($this->request->data)) {
@@ -57,7 +69,7 @@ class UsersController extends AppController {
         if ($this->request->is('post')) {
             $this->User->create();
             if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__('<div class="alert alert-success" role="alert">You have registered. Login to complete your profile.</div>'));
+                $this->Session->setFlash(__('<div class="alert alert-success" role="alert">You have successfully created a user.</div>'));
                 return $this->redirect(array('action' => 'index'));
             }
             $this->Session->setFlash(
@@ -71,6 +83,8 @@ class UsersController extends AppController {
     }
 
     public function edit($id = null) {
+        $this->set('programs', $this->User->Program->find('list', array(
+        'fields' => 'Program.ProgramName')));
         $this->User->id = $id;
         if (!$this->User->exists()) {
             throw new NotFoundException(__('Invalid user'));
@@ -79,7 +93,10 @@ class UsersController extends AppController {
             if ($this->User->Profile->save($this->request->data) && $this->User->save($this->request->data)) {
                 //debug($this->request->data);
                    $this->Session->write('Auth.User', array_merge(AuthComponent::User(), $this->request->data['User']) ); 
-                   return $this->redirect(array('action' => 'index'));
+                   $this->Session->setFlash(__('<div class="alert alert-success alert-dismissible" role="alert">'
+                        . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Your profile '
+                        . '                     has been successfully updated.</div>'));
+                return $this->redirect(array('action' => 'view', $this->Auth->user('id')));
                              
             }
             $this->Session->setFlash(
@@ -104,8 +121,11 @@ class UsersController extends AppController {
             throw new NotFoundException(__('Invalid user'));
         }
         if ($this->User->delete()) {
-            $this->Session->setFlash(__('User deleted'));
-            return $this->redirect(array('action' => 'index'));
+            $this->Session->setFlash(__('<div class="alert alert-danger" role="alert">
+                            <span class="sr-only">Error:</span>
+                            User deleted.
+                          </div>'));
+            return $this->redirect(array('admin' => true ,'action' => 'index'));
         }
         $this->Session->setFlash(__('User was not deleted'));
         return $this->redirect(array('action' => 'index'));
@@ -113,11 +133,16 @@ class UsersController extends AppController {
 
         public function login() {
             if ($this->request->is('post')) {
-                if ($this->Auth->login()) {                                      
+                if ($this->Auth->login()) { 
+                    if($this->Auth->user('role') == 'admin'){
+                    return $this->redirect(
+                    array('admin' => true, 'controller' => 'users', 'action' => 'index')
+                    );
+                }
                     return $this->redirect(
                     array('controller' => 'profiles', 'action' => 'index')
                     );
-                }
+                } 
                 $this->Session->setFlash(__('<div class="alert alert-danger" role="alert">
                             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                             <span class="sr-only">Error:</span>

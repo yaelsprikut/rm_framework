@@ -7,7 +7,7 @@
             <img class="img-responsive" src="<?php echo $this->webroot; ?>img/gbclogo.png"  height="80" width="80"> 
         </ul> 
     <form class="navbar-form navbar-left">
-                <a href="#menu-toggle" class="btn btn-success" id="menu-toggle"><i class="fa fa-th-list"></i><b> Toggle Menu</b></a>
+                <a href="#menu-toggle" class="btn btn-info" id="menu-toggle"><i class="fa fa-th-list"></i><b> Toggle Menu</b></a>
             </form>  
     
             

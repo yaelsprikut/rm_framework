@@ -6,7 +6,6 @@
                     <div class="col-sm-5 col-md-7">
                         <!-- Contact Info -->
                         <h3><b><?php echo $user['User']['fname']; ?>&nbsp;<?php echo $user['User']['lname']; ?></b></h3>
-                        <hr>
                         <p>
                         <i class="glyphicon glyphicon-envelope"></i>&nbsp;<?php echo $user['User']['username']; ?>
                         <br /></p>

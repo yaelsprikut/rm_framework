@@ -5,7 +5,7 @@
       		<div class="col-md-12" id="content">
                     <?php echo $this->element('header');?> 
             	<div class="panel">
-    			<div class="panel-heading" style="background-color:#0065A4;color:#eee;">Edit Profile</div>   
+            <div class="panel-heading" style="background-color:#0065A4;color:#eee;">Edit Profile</div>   
               	<div class="panel-body">
                     <div class="container">
                 <div class="no-gutter row">           

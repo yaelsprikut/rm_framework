@@ -3,7 +3,7 @@
       		<div class="col-md-12" id="content">
                     <?php echo $this->element('header');?>  
             	<div class="panel">
-    			<div class="panel-heading" style="background-color:#0065A4;color:#eee;">Personal Information</div>   
+    			<div class="panel-heading" style="background-color:#0065A4;color:#eee;"><?php echo $user['User']['fname']; ?>'s Monster Profile</div>   
               	<div class="panel-body">
                     <?php echo $this->Session->flash(); ?>
                     <br>
@@ -49,7 +49,7 @@
                 <hr>
                     <div class="well"> 
                     <h4>Monster Tags</h4>
-                    <hr class='colorgraph'>
+                    <hr>
                     <button class="btn btn-primary">#CSS</button>
                     <button class="btn btn-primary">#WordPress</button>
                     <button class="btn btn-primary">#PHP</button>
