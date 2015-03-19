@@ -41,9 +41,6 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>&nbsp;&nbsp;Administrator <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-                        </li>
-                        <li>
                             <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
                         </li>
                         <li>
