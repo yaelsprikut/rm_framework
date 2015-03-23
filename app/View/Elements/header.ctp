@@ -6,13 +6,13 @@
                     <div class="col-sm-4">
         <div class="row">
             <div class="col-sm-4">
-                <img class="img-circle img-responsive img-center" src="<?php echo $this->webroot; ?>img/circle.png" width="150px" height="150px" alt="">
+                <img class="img-circle img-responsive img-center" src="<?php echo $this->webroot; ?>img/circle_1.png" width="150px" height="150px" alt="">
             </div>
             <div class="col-sm-4">
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/150x150" alt="">
+                <img class="img-circle img-responsive img-center" src="<?php echo $this->webroot; ?>img/circle_2.png" width="150px" height="150px" alt="">
             </div>
             <div class="col-sm-4">
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/150x150" alt="">
+                <img class="img-circle img-responsive img-center" src="<?php echo $this->webroot; ?>img/circle_3.png" width="150px" height="150px" alt="">
             </div>
         </div>
                     </div>

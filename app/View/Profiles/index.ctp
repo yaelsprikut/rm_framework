@@ -1,55 +1,140 @@
-<h3>Control Panel: Profiles</h3>
-        <hr>
-        <ol class="breadcrumb">
-                            <li>
-                                <i class="fa fa-dashboard"></i>  <a href="">Dashboard</a>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-tasks"></i> Profiles
-                            </li>
-        </ol>
-        <div class="well">
-        <p>
-            This section provides a list of all registered profiles on Research Monster. The administrator 
-            has the ability to view, modify, and delete any profile content provided by any user. In the 
-            event that an administrator decides to deactivate a profile, a notification e-mail will be sent 
-            to the user.
-        </p>
-        <blockquote>
-            The administrator cannot create a profile, however they can make modifications to user accounts.
-        </blockquote>
-        <hr>
-        <li><mark>View</mark> - The administrator can view any user profile.</li>
-        <li><mark>Edit</mark> - The administrator can modify any user profile information.</li>
-        <li><mark>Delete</mark> - The administrator can delete any user profile. The profile 
-                associated with the user account will remain in the Research Monster archive.</li>
+<?php echo $this->element('header');?>
+<hr class="colorgraph">
+<!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="page-header">Page Heading
+                    <small>Secondary Text</small>
+                </h1>
+            </div>
         </div>
-        
-	<table class="table table-bordered table-hover table-striped">
-    <tr>
-        <th>Profile ID</th>
-        <th>User ID</th>
-        <th>Created</th>
-        <th>Modified</th>
-        <th>Profile Actions</th>
-    </tr>
+        <!-- /.row -->
 
-<!-- Here's where we loop through our $posts array, printing out post info -->
+        <!-- Project One -->
+        <div class="row">
+            <div class="col-md-3">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/300x100" alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>Project One</h3>
+                <h4>Subheading</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
+                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <!-- /.row -->
 
+        <hr>
 
-    <?php foreach ($profiles as $profile): ?>
-    <?php //debug($profile); ?>
-    <tr>
-        <td><?php echo $profile['Profile']['id']; ?></td>
-        <td><?php echo $profile['Profile']['user_id']; ?></td>
-        <td><?php echo $profile['Profile']['created']; ?></td>
-        <td><?php echo $profile['Profile']['modified']; ?></td>
-        <td>
-            <?php echo $this->Html->link('View', array('action' => 'edit', $profile['Profile']['id']));?> - 
-            <?php echo $this->Html->link('Edit', array('action' => 'edit', $profile['Profile']['id']));?> -
-            <?php echo $this->Form->postLink('Delete',array('action' => 'delete', $profile['Profile']['id']),array('confirm' => 'Are you sure?'));?>
-        </td>
-    </tr>
-    <?php endforeach; ?>
+        <!-- Project Two -->
+        <div class="row">
+            <div class="col-md-3">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/300x100" alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>Project Two</h3>
+                <h4>Subheading</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odit velit cumque vero doloremque repellendus distinctio maiores rem expedita a nam vitae modi quidem similique ducimus! Velit, esse totam tempore.</p>
+                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <!-- /.row -->
 
-</table>
+        <hr>
+
+        <!-- Project Three -->
+        <div class="row">
+            <div class="col-md-3">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/300x100" alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>Project Three</h3>
+                <h4>Subheading</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, temporibus, dolores, at, praesentium ut unde repudiandae voluptatum sit ab debitis suscipit fugiat natus velit excepturi amet commodi deleniti alias possimus!</p>
+                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Project Four -->
+        <div class="row">
+
+            <div class="col-md-3">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/300x100" alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>Project Four</h3>
+                <h4>Subheading</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, quidem, consectetur, officia rem officiis illum aliquam perspiciatis aspernatur quod modi hic nemo qui soluta aut eius fugit quam in suscipit?</p>
+                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Project Five -->
+        <div class="row">
+            <div class="col-md-3">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/300x100" alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>Project Five</h3>
+                <h4>Subheading</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, quo, minima, inventore voluptatum saepe quos nostrum provident ex quisquam hic odio repellendus atque porro distinctio quae id laboriosam facilis dolorum.</p>
+                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+                    <li>
+                        <a href="#">&laquo;</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li>
+                        <a href="#">4</a>
+                    </li>
+                    <li>
+                        <a href="#">5</a>
+                    </li>
+                    <li>
+                        <a href="#">&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+    </div>
+    <!-- /.container -->

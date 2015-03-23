@@ -4,7 +4,6 @@
         
      ?>
 
-
 <h3>Control Panel: Users </h3>
         <hr>
         <?php echo $this->Session->flash(); ?>
@@ -35,7 +34,7 @@
             <hr>
             <li><mark>View</mark> - The administrator can view user and their profile.</li>
             <li><mark>Edit</mark> - The administrator can modify any user account information.</li>
-            <li><mark>Delete</mark> - The administrator can delete any user account. The profile 
+            <li><mark>Deactivate</mark> - The administrator can delete any user account. The profile 
                 associated with the account will remain in the Research Monster archive.</li>
             
         </div>
@@ -132,7 +131,7 @@
 			<?php echo $this->Html->link('View', array('admin' => false, 'action' => 'view', $user['User']['id'])); ?> -
 			<?php if ($current_user['id'] == $user['User']['id'] || $current_user['role'] == 'admin'): ?>
 			    <?php echo $this->Html->link('Edit', array('action' => 'edit', $user['User']['id'])); ?> -
-			    <?php echo $this->Form->postLink('Delete', array('admin' => false, 'action' => 'delete', $user['User']['id']), array('confirm'=>'Are you sure you want to delete that user?')); ?>
+			    <?php echo $this->Form->postLink('Deactivate', array('admin' => false, 'action' => 'delete', $user['User']['id']), array('confirm'=>'Are you sure you want to deactivate the account?')); ?>
 		    <?php endif; ?>
 		</td>
 	</tr>

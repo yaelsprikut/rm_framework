@@ -48,6 +48,7 @@
             ?>
         </td>
         <td>
+             <?php echo $this->Form->postLink('View', array('admin' => false, 'action' => 'view', $project['Project']['id']));?> -
             <?php
                 echo $this->Form->postLink(
                     'Delete',

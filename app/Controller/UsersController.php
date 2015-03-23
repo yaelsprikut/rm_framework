@@ -121,8 +121,6 @@ class UsersController extends AppController {
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->User->Profile->save($this->request->data) && $this->User->save($this->request->data)) {
-                //debug($this->request->data);
-                   $this->Session->write('Auth.User', array_merge(AuthComponent::User(), $this->request->data['User']) ); 
                    $this->Session->setFlash(__('<div class="alert alert-success alert-dismissible" role="alert">'
                         . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>The profile '
                         . '                     has been successfully updated.</div>'));
@@ -151,9 +149,8 @@ class UsersController extends AppController {
             throw new NotFoundException(__('Invalid user'));
         }
         if ($this->User->delete()) {
-            $this->Session->setFlash(__('<div class="alert alert-danger" role="alert">
-                            <span class="sr-only">Error:</span>
-                            User deleted.
+            $this->Session->setFlash(__('<div class="alert alert-warning" role="alert">
+                            Deactivated User Account.
                           </div>'));
             return $this->redirect(array('admin' => true ,'action' => 'index'));
         }

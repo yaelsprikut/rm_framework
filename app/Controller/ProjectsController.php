@@ -5,6 +5,8 @@ class ProjectsController extends AppController {
 
     public function index() {
         $this->set('projects', $this->Project->find('all'));
+        $this->set('my_projects', $this->Project->find('all', array(
+        'conditions' => array('Project.user_id' => $this->Auth->user('id')))));
     }
     
     public function admin_index() {
@@ -73,6 +75,26 @@ class ProjectsController extends AppController {
             __('The project with id: %s could not be deleted.', h($id))
         );
     }
+     
+
+    return $this->redirect(array('action' => 'index'));
+    }
+    
+        public function admin_delete($id) {
+    if ($this->request->is('get')) {
+        throw new MethodNotAllowedException();
+    }
+
+    if ($this->Project->delete($id)) {
+        $this->Session->setFlash(
+            __('The project with id: %s has been deleted.', h($id))
+        );
+    } else {
+        $this->Session->setFlash(
+            __('The project with id: %s could not be deleted.', h($id))
+        );
+    }
+     
 
     return $this->redirect(array('action' => 'index'));
     }

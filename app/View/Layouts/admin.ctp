@@ -57,9 +57,23 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav"><br>
                     <li>
-                        <h4>&nbsp;&nbsp;<i class="fa fa-dashboard"></i> Dashboard Home</h4>
-                        <p class='text-right'>&nbsp;&nbsp;Welcome back, <?=$this->Session->read('Auth.User.role')?>.</p>
-                    <hr>
+                        <h4>&nbsp;&nbsp;<i class="fa fa-home"></i> Administrator Panel </h4>
+                    </li>
+                    <li>
+                      <?php
+                      
+                      echo $this->Html->link(
+                        '<i class="fa fa-fw fa-dashboard"></i> Dashboard',
+                        array(
+                            'controller' => 'users',
+                            'action' => 'index',
+                            'admin' => true
+                        ),
+                        array(                           
+                            'escape' => false
+                        )
+                    );
+                      ?>
                     </li>
                     <li>
                       <?php
@@ -68,7 +82,7 @@
                         '<i class="fa fa-fw fa-user"></i> Users',
                         array(
                             'controller' => 'users',
-                            'action' => 'admin_index',
+                            'action' => 'index',
                             'admin' => true
                         ),
                         array(                           
@@ -84,7 +98,7 @@
                         '<i class="fa fa-fw fa-tasks"></i> Profiles',
                         array(
                             'controller' => 'profiles',
-                            'action' => 'admin_index',
+                            'action' => 'index',
                             'admin' => true
                         ),
                         array(                           
@@ -100,7 +114,7 @@
                         '<i class="fa fa-fw fa-edit"></i> Projects',
                         array(
                             'controller' => 'projects',
-                            'action' => 'admin_index',
+                            'action' => 'index',
                             'admin' => true
                         ),
                         array(                           

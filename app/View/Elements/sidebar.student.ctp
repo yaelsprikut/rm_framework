@@ -11,7 +11,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">Homepage</a>
+                    <?php echo $this->Html->link('Homepage', array('admin' => false, 'controller' => 'projects' , 'action' => 'index')); ?>
                 </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#profile"><i class="glyphicon glyphicon-user"></i>&nbsp;<b> My Profile </b><i class="fa fa-fw fa-caret-down"></i></a>

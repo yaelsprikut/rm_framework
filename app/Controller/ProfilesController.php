@@ -11,6 +11,9 @@ class ProfilesController extends AppController{
     
     public function admin_index() {
         $this->set('profiles', $this->Profile->find('all'));
+        $this->loadModel('User');
+        $this->set('users', $this->User->find('all', array(
+        'conditions' => array('Profile.user_id'))));
     }
     
      public function view($id = null) {

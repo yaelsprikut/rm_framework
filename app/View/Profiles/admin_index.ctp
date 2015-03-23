@@ -30,22 +30,27 @@
     <tr>
         <th>Profile ID</th>
         <th>User ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>E-Mail</th>        
         <th>Created</th>
         <th>Modified</th>
         <th>Profile Actions</th>
     </tr>
-
 <!-- Here's where we loop through our $posts array, printing out post info -->
-    <?php foreach ($profiles as $profile): ?>
+    <?php foreach ($users as $user): ?>
     <?php //debug($profile); ?>
     <tr>
-        <td><?php echo $profile['Profile']['id']; ?></td>
-        <td><?php echo $profile['Profile']['user_id']; ?></td>
-        <td><?php echo $profile['Profile']['created']; ?></td>
-        <td><?php echo $profile['Profile']['modified']; ?></td>
+        <td><?php echo $user['Profile']['id']; ?></td>
+        <td><?php echo $user['Profile']['user_id']; ?></td>
+        <td><?php echo $user['User']['fname']; ?></td>
+        <td><?php echo $user['User']['lname']; ?></td>
+        <td><?php echo $user['User']['username']; ?></td>
+        <td><?php echo $user['Profile']['created']; ?></td>
+        <td><?php echo $user['Profile']['modified']; ?></td>
         <td>
-            <?php echo $this->Html->link('View', array('action' => 'edit', $profile['Profile']['id']));?> - 
-            <?php echo $this->Form->postLink('Delete',array('admin' => false, 'action' => 'delete', $profile['Profile']['id']),array('confirm' => 'Are you sure?'));?>
+            <?php echo $this->Html->link('View', array('admin' => false, 'action' => 'view', $user['Profile']['id']));?> - 
+            <?php echo $this->Form->postLink('Delete',array('admin' => false, 'action' => 'delete', $user['Profile']['id']),array('confirm' => 'Are you sure?'));?>
         </td>
     </tr>
     <?php endforeach; ?>
