@@ -2,8 +2,17 @@
 
       		<div class="col-md-12" id="content">
                     <?php echo $this->element('header');?>  
+                    <hr class="colorgraph">
             	<div class="panel">
-    			<div class="panel-heading" style="background-color:#0065A4;color:#eee;"><?php echo $user['User']['fname']; ?>'s Monster Profile</div>   
+    			<div class="panel-heading" style="background-color:#0065A4;color:#eee;"><?php echo $user['User']['fname']; ?>'s Monster Profile</div> 
+                            <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i>  <a href="">Research Monster</a>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-user"></i> My Profile
+                            </li>
+                            </ol>
               	<div class="panel-body">
                     <?php echo $this->Session->flash(); ?>
                     <br>

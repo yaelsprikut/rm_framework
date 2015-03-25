@@ -97,7 +97,8 @@
                     </div>
             </div>
         <br><br>
-	<table class="table table-bordered table-hover table-striped">
+
+	<table class="table table-bordered table-hover table-striped" id="role">
 	<tr>
 			<th>User ID</th>
                         <th>User Role</th>

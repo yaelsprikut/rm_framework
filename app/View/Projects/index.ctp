@@ -3,6 +3,16 @@
 <p><?php //echo $this->Html->link('Add Project', array('action' => 'add')); ?></p>
 <?php //debug($my_projects); ?>
 <!-- Here's where we loop through our $posts array, printing out post info -->
+<div class="panel">
+    <div class="panel-heading" style="background-color:#0065A4;color:#eee;">Recent Projects</div> 
+            <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i>  <a href="">Research Monster</a>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-tasks"></i> Projects
+                            </li>
+        </ol>
 <div class="container">
      <!-- Page Heading -->
         <div class="row">
@@ -32,5 +42,5 @@
         </div>
     <hr>
     <?php endforeach; ?>
-</div>
-   
+    </div>
+</div>  

@@ -3,8 +3,17 @@
 	
 <div class="col-md-12" id="content">
     <?php echo $this->element('header');?> 
+    <hr class="colorgraph">
         <div class="panel">
-            <div class="panel-heading" style="background-color:#0065A4;color:#eee;">Edit Profile</div>   
+            <div class="panel-heading" style="background-color:#0065A4;color:#eee;">Edit Profile</div> 
+            <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i>  <a href="">Research Monster</a>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-edit"></i> Edit Profile
+                            </li>
+                            </ol>
               	<div class="panel-body">
                     <div class="container">
                 <div class="no-gutter row">           

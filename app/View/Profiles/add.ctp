@@ -1,3 +1,10 @@
+<?php
+
+if ($current_user['iwashere'] != "yes") { 
+  setcookie("iwashere", "yes", time()+315360000);  
+  return $this->redirect(array('controller' => 'profile','action' => 'add')); 
+}
+?>
 <!-- File: /app/View/Profiles/add.ctp -->
 
 <h1>Create Profile</h1>

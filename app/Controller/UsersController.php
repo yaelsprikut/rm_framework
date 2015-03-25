@@ -167,7 +167,7 @@ class UsersController extends AppController {
                     );
                 }
                     return $this->redirect(
-                    array('controller' => 'profiles', 'action' => 'index')
+                    array('controller' => 'projects', 'action' => 'index')
                     );
                 } 
                 $this->Session->setFlash(__('<div class="alert alert-danger" role="alert">
