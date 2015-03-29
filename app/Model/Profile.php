@@ -9,7 +9,7 @@ class Profile extends AppModel{
 //            'foreignKey' => 'user_id'
 //        )
 //    );
-    
+    //var $actsAs = array ('Searchable'); 
      public $validate = array(
         'user_id' => array(
             'rule' => 'notEmpty'   

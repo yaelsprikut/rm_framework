@@ -1,9 +1,25 @@
 <?php
 class ProjectsController extends AppController {
     public $helpers = array('Html', 'Form', 'Session');
-    public $components = array('Session');
+    public $components = array('Session', 'Search.Prg');
+
+    var $actsAs = array ('Search.Searchable'); 
+    
+    public $presetVars = array(
+    array('field' => 'title', 'type' => 'value'),             
+    );
 
     public function index() {
+        $this->Prg->commonProcess();
+        $this->paginate = array(
+        'conditions' => $this->Project->parseCriteria($this->passedArgs));
+        //$this->set('projects', $this->Project->find('all'));
+//        $this->set('my_projects', $this->Project->find('all', array(
+//        'conditions' => array('Project.user_id' => $this->Auth->user('id')))));
+        $this->set('projects', $this->paginate());
+    }
+    
+    public function projects() {
         $this->set('projects', $this->Project->find('all'));
         $this->set('my_projects', $this->Project->find('all', array(
         'conditions' => array('Project.user_id' => $this->Auth->user('id')))));
@@ -26,11 +42,15 @@ class ProjectsController extends AppController {
     }
 
     public function add() {
+        $this->set('programs', $this->Project->Program->find('list', array(
+        'fields' => 'Program.ProgramName')));
         if ($this->request->is('post')) {
             //$this->Post->create();
             $this->request->data['Project']['user_id'] = $this->Auth->user('id');
             if ($this->Project->save($this->request->data)) {
-                $this->Session->setFlash(__('Your project has been saved.'));
+                $this->Session->setFlash(__('<div class="alert alert-success alert-dismissible" role="alert">'
+                        . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Your project '
+                        . '                     has been saved.</div>'));
                 return $this->redirect(array('action' => 'index'));
             }
         }
@@ -103,6 +123,12 @@ class ProjectsController extends AppController {
     // All registered users can add posts
        
     if ($this->action === 'add') {
+        if($user['role'] == 'research'){
+        return true;
+        }
+    }
+    
+    if ($this->action === 'projects') {
         if($user['role'] == 'research'){
         return true;
         }

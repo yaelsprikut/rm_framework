@@ -14,6 +14,7 @@ class User extends AppModel {
             'foreignKey' => 'program_id'
         )
     );
+    //var $actsAs = array ('Searchable'); 
     
     public $validate = array(
         'fname' => array(

@@ -1,5 +1,6 @@
 <?php echo $this->element('header');?>
 <hr class="colorgraph">
+<?php echo $this->Session->flash(); ?>
 <p><?php //echo $this->Html->link('Add Project', array('action' => 'add')); ?></p>
 <?php //debug($my_projects); ?>
 <!-- Here's where we loop through our $posts array, printing out post info -->
@@ -13,6 +14,22 @@
                                 <i class="fa fa-tasks"></i> Projects
                             </li>
         </ol>
+     &nbsp;&nbsp;&nbsp;&nbsp;<label for="InputEmail">Search for Projects:</label><small> <mark>(You can look up projects by title.)</mark></small>
+    <div class="form-group">        
+        <div class="col-sm-5">
+    <?php echo $this->Form->create('Project', array('url' => array_merge(array('action' => 'index'), $this->params['pass'])));
+          echo $this->Form->input('title', array('label' => false,
+                                                 'class' => 'form-control input-sm',
+                                                 'div' => false, 'empty' => true));
+          ?>
+        </div>
+        <div>
+            <?php
+          echo $this->Form->submit(__('Search', true), array('class' => 'btn btn-sm btn-primary','div' => false));
+          echo $this->Form->end();
+               ?>
+            </div>
+        </div>
 <div class="container">
      <!-- Page Heading -->
         <div class="row">
@@ -23,6 +40,7 @@
             </div>
         </div>
         <!-- /.row -->
+        <?php echo $this->Paginator->sort['title']; ?>
      <?php foreach ($projects as $project): ?>
         <div class="row">
             <div class="col-md-3">

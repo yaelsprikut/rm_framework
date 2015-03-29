@@ -40,7 +40,7 @@
           <h3>Personal Information</h3>
           <hr>
           <blockquote><i class="fa fa-pencil"></i>
-           <mark>Reseach Monster Tip:</mark> You can update and change any profile information here. Update your research and
+           <mark>Research Monster Tip:</mark> You can update and change any profile information here. Update your research and
            work experience, and add any relevant tags based on your growing experience.
         </blockquote>
         <br>

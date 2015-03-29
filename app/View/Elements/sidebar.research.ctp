@@ -11,7 +11,7 @@
                     </a>
                 </li>
                 <li>
-                     <?php echo $this->Html->link('Homepage', array('admin' => false, 'controller' => 'projects' , 'action' => 'index')); ?>
+                     <?php echo $this->Html->link('Homepage', array('admin' => false, 'controller' => 'projects' , 'action' => 'projects')); ?>
                 </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#profile"><i class="glyphicon glyphicon-user"></i>&nbsp;<b> My Profile </b><i class="fa fa-fw fa-caret-down"></i></a>
@@ -32,7 +32,10 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#projects"><i class="glyphicon glyphicon-tasks"></i>&nbsp; <b>My Projects</b> <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="projects" class="collapse">
                             <li>
-                                <?php echo $this->Html->link('View My Projects', array('controller' => 'projects' , 'action' => 'index')); ?>
+                                <?php echo $this->Html->link('View All Projects', array('controller' => 'projects' , 'action' => 'index')); ?>
+                            </li>
+                            <li>
+                                <?php echo $this->Html->link('View My Projects', array('controller' => 'projects' , 'action' => 'projects')); ?>
                             </li>
                             <li>
                                 <?php echo $this->Html->link('Create a Project', array('controller' => 'projects', 'action' => 'add')); ?>

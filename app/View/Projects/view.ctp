@@ -3,9 +3,10 @@
 <div class="panel">
     <div class="panel-heading" style="background-color:#0065A4;color:#eee;">Project Posting</div>
 <div class="container">
+    
         <div class="row">
             <div class="col-sm-8">
-
+<?php //debug($project) ?>
                 <!-- Blog Post -->
 
                 <!-- Title -->
@@ -18,6 +19,7 @@
                <hr>
                 <!-- Date/Time -->
                 <p><span class="glyphicon glyphicon-time"></span> Posted on <?php echo $project['Project']['created']; ?></p>
+                <p><span class="glyphicon glyphicon-book"></span> <b>Associated Program:</b> <?php echo $project['Program']['ProgramName']; ?></p>
 
                 <hr>
 

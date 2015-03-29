@@ -1,9 +1,7 @@
 <?php    
    // $program = $this->Program->find('list');
-    //Debugger::dump($program);   
-        
+    //Debugger::dump($program);     
      ?>
-
 <h3>Control Panel: Users </h3>
         <hr>
         <?php echo $this->Session->flash(); ?>
@@ -138,6 +136,6 @@
 	</tr>
 <?php endforeach; ?>
 	</table>
-
+       
 <hr>
 
