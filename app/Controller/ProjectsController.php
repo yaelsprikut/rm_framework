@@ -22,7 +22,7 @@ class ProjectsController extends AppController {
     public function projects() {
         $this->set('projects', $this->Project->find('all'));
         $this->set('my_projects', $this->Project->find('all', array(
-        'conditions' => array('Project.user_id' => $this->Auth->user('id')))));
+        'conditions' => array('Project.create_id' => $this->Auth->user('id')))));
     }
     
     public function admin_index() {
@@ -46,7 +46,7 @@ class ProjectsController extends AppController {
         'fields' => 'Program.ProgramName')));
         if ($this->request->is('post')) {
             //$this->Post->create();
-            $this->request->data['Project']['user_id'] = $this->Auth->user('id');
+            $this->request->data['Project']['create_id'] = $this->Auth->user('id');
             if ($this->Project->save($this->request->data)) {
                 $this->Session->setFlash(__('<div class="alert alert-success alert-dismissible" role="alert">'
                         . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Your project '
@@ -56,6 +56,88 @@ class ProjectsController extends AppController {
         }
     }
     
+        
+        
+    public function apply(){
+        $this->loadModel('ProjectApply');
+        
+        $found = $this->ProjectApply->find('first',array(
+            'conditions'=>array(
+                'user_id'=>$this->request->query['user'],
+                'project_id'=>$this->request->query['project']
+            )
+        ));
+        if(count($found)==0){
+        $this->ProjectApply->set(array(
+            'user_id' => $this->request->query['user'],
+            'project_id' =>$this->request->query['project']
+        ));
+        
+            $this->ProjectApply->save();
+            $this->Session->setFlash(__('<div class="alert alert-success alert-dismissible" role="alert">'
+                        . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>You have '
+                        . ' successfully applied for this project.</div>'));
+            return $this->redirect(array('action' => 'index'));
+        }
+        $this->Session->setFlash(__('<div class="alert alert-danger" role="alert">
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only">Error:</span>
+                            You have already applied for this project.
+                          </div>'));
+        return $this->redirect(array('action' => 'index'));
+    }
+    
+    public function applied(){
+        $this->loadModel('ProjectApply');
+        $this->loadModel('Project');
+        //$this->loadModel('Project');
+        $this->set('projects', $this->ProjectApply->find('all'));
+        $this->set('applied', $this->Project->find('all'));
+        //$this->set('projects', $this->Project->find('all'));
+        $this->set('my_projects', $this->ProjectApply->find('all', array(
+        'conditions' => array('ProjectApply.user_id' => $this->Auth->user('id')))));       
+    }
+    
+    public function saveProject(){
+         $this->loadModel('ProjectSave');
+        
+        $found = $this->ProjectSave->find('first',array(
+            'conditions'=>array(
+                'user_id'=>$this->request->query['user'],
+                'project_id'=>$this->request->query['project']
+            )
+        ));
+        if(count($found)==0){
+        $this->ProjectSave->set(array(
+            'user_id' => $this->request->query['user'],
+            'project_id' =>$this->request->query['project']
+        ));
+        
+            $this->ProjectSave->save();
+            $this->Session->setFlash(__('<div class="alert alert-success alert-dismissible" role="alert">'
+                        . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>You have '
+                        . ' successfully saved this project.</div>'));
+            return $this->redirect(array('action' => 'index'));
+        }
+        $this->Session->setFlash(__('<div class="alert alert-danger" role="alert">
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only">Error:</span>
+                            You have already saved this project.
+                          </div>'));
+        return $this->redirect(array('action' => 'index'));
+              
+    }
+    
+     public function saved(){
+        $this->loadModel('ProjectSave');
+        $this->loadModel('Project');
+        //$this->loadModel('Project');
+        $this->set('projects', $this->ProjectSave->find('all'));
+        $this->set('saved', $this->Project->find('all'));
+        //$this->set('projects', $this->Project->find('all'));
+        $this->set('my_projects', $this->ProjectSave->find('all', array(
+        'conditions' => array('ProjectSave.user_id' => $this->Auth->user('id')))));       
+    }
     
     public function edit($id = null) {
     if (!$id) {
@@ -121,7 +203,18 @@ class ProjectsController extends AppController {
     
    public function isAuthorized($user) {
     // All registered users can add posts
-       
+    if ($this->action === 'apply' || $this->action === 'saveProject'){
+    if($user['role'] == 'student' || $user['role'] == 'staff'){
+         return true;   
+        }   
+    }
+    
+    if ($this->action === 'applied' || $this->action === 'saved'){
+    if($user['role'] == 'student' || $user['role'] == 'staff'){
+         return true;   
+        }
+    }
+    
     if ($this->action === 'add') {
         if($user['role'] == 'research'){
         return true;

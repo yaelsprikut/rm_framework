@@ -35,10 +35,10 @@
                                 <?php echo $this->Html->link('Recommended Projects', array('controller' => 'projects' , 'action' => 'index')); ?>
                             </li>
                             <li>
-                                <?php echo $this->Html->link('Recently Applied', array('controller' => 'users', 'action' => 'edit', $this->Session->read('Auth.User.id'))); ?>
+                                <?php echo $this->Html->link('Recently Applied', array('controller' => 'projects', 'action' => 'applied', $this->Session->read('Auth.User.id'))); ?>
                             </li>
                             <li>
-                                Saved Projects
+                                 <?php echo $this->Html->link('Saved Projects', array('controller' => 'projects', 'action' => 'saved', $this->Session->read('Auth.User.id'))); ?>
                             </li>
                         </ul>              
                     </li>
@@ -46,7 +46,7 @@
                     <a href="#">Events</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <?php echo $this->Html->link('About Us', array('controller' => 'users', 'action' => 'about')); ?>
                 </li>
                 <li>
                     <a href="#">Services</a>

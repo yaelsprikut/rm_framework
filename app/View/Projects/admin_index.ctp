@@ -43,7 +43,7 @@
             <?php
                 echo $this->Html->link(
                     $project['Project']['title'],
-                    array('action' => 'view', $project['Project']['id'])
+                    array('admin' => false, 'action' => 'view', $project['Project']['id'])
                 );
             ?>
         </td>

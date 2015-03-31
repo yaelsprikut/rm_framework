@@ -54,7 +54,7 @@ class Project extends AppModel {
     
     
     public function isOwnedBy($project, $user) {
-    return $this->field('id', array('id' => $project, 'user_id' => $user)) !== false;
+    return $this->field('id', array('id' => $project, 'create_id' => $user)) !== false;
 }
     
 }

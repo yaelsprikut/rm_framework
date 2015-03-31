@@ -7,7 +7,16 @@ App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
 class User extends AppModel {
     
     public $hasOne = 'Profile';
-    public $hasAndBelongsToMany = 'Projects';
+    public $hasMany = array(
+        'ProjectSave' => array(
+            'foreignKey' => 'user_id'
+        ),
+        'ProjectApply' => array(
+            'foreignKey' => 'user_id'
+        ),
+        'Project' => array(
+            'foreignKey' => 'create_id'
+        ));
     public $belongsTo = array(
         'Program' => array(
             'className' => 'Program',

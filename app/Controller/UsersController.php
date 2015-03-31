@@ -13,6 +13,11 @@ class UsersController extends AppController {
         
         
     }
+    
+    public function about(){
+        $this->User->recursive = 0;
+        //$this->set()
+    }
 
     public function index() {
         $this->User->recursive = 0;
@@ -189,7 +194,7 @@ class UsersController extends AppController {
     // Admin can access every action
         $this->set('current_user', $this->Auth->user());
 
-        if ($this->action === 'add') {
+        if ($this->action === 'add' || $this->action === 'about') {
             return true;
         }
         

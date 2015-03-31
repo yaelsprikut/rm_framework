@@ -35,7 +35,7 @@
                 <?=$this->Session->read('Auth.User.fname')?>&nbsp;<?=$this->Session->read('Auth.User.lname')?>&nbsp;
                 <i class="glyphicon glyphicon-user"></i>&nbsp;<i class="glyphicon glyphicon-chevron-down"></i>&nbsp;&nbsp;</a>
             <ul class="dropdown-menu">
-              <li><a href="#">Admin</a></li>
+              <li><a href="#">Settings</a></li>
               <li><a href="#">Privacy</a></li>
               <li class="divider"></li>
               <li><?php echo $this->Html->link('Log Out', '../users/logout'); ?></li>

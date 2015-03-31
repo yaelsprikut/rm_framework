@@ -2,7 +2,6 @@
 <hr class="colorgraph">
 <?php echo $this->Session->flash(); ?>
 <p><?php //echo $this->Html->link('Add Project', array('action' => 'add')); ?></p>
-<?php //debug($my_projects); ?>
 <!-- Here's where we loop through our $posts array, printing out post info -->
 <div class="panel">
     <div class="panel-heading" style="background-color:#0065A4;color:#eee;">Recent Projects</div> 
@@ -14,7 +13,7 @@
                                 <i class="fa fa-tasks"></i> Projects
                             </li>
         </ol>
-     &nbsp;&nbsp;&nbsp;&nbsp;<label for="InputEmail">Search for Projects:</label><small> <mark>(You can look up projects by title.)</mark></small>
+     &nbsp;&nbsp;<i class="fa fa-search"></i>&nbsp;<label for="InputEmail">Search for Projects:</label><small> <mark>(You can look up projects by title.)</mark></small>
     <div class="form-group">        
         <div class="col-sm-5">
     <?php echo $this->Form->create('Project', array('url' => array_merge(array('action' => 'index'), $this->params['pass'])));
@@ -47,7 +46,7 @@
                     <img class="img-responsive" src="http://placehold.it/250x250" alt="">
             </div>
             <div class="col-md-6">
-                <h3><u><?php echo $project['Project']['title']; ?></u></h3>
+                <h3><u> <?php echo $this->Html->link($project['Project']['title'], array('action' => 'view', $project['Project']['id']));?></u></h3>
                 <h4><?php echo $project['Project']['summary']; ?></h4>
                 <p><?php echo $project['Project']['description']; ?></p>
                 <?php

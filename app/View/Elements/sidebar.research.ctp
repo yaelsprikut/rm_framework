@@ -49,7 +49,7 @@
                     <a href="#">Events</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                     <?php echo $this->Html->link('About Us', array('controller' => 'users', 'action' => 'about')); ?>
                 </li>
                 <li>
                     <h4><?=$this->Session->read('Auth.Profile.user_id')?></h4>
