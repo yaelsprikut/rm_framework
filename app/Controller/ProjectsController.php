@@ -98,6 +98,31 @@ class ProjectsController extends AppController {
         'conditions' => array('ProjectApply.user_id' => $this->Auth->user('id')))));       
     }
     
+    public function applicants($project_id){
+          $this->loadModel('ProjectApply');
+//        //$this->loadModel('Project');
+//        $this->set('applicants', $this->ProjectApply->find('all'), array(
+//            'conditions' => array('Project.create_id' =>$this->Auth->user('id'))
+//        ));
+        if (!$project_id) {
+            throw new NotFoundException(__('Invalid project'));
+        }
+
+        $project = $this->ProjectApply->find('all', array(
+            'conditions' => array('Project.id' => $project_id)
+        ));
+        if (!$project) {
+            //throw new NotFoundException(__('Invalid project'));
+            $this->Session->setFlash('<div class="alert alert-danger" role="alert">
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only">Error:</span>
+                            There are no current applicants for this project.
+                          </div>');
+        }
+        $this->set('project', $project);
+    }   
+        
+    
     public function saveProject(){
          $this->loadModel('ProjectSave');
         
@@ -170,7 +195,11 @@ class ProjectsController extends AppController {
 
     if ($this->Project->delete($id)) {
         $this->Session->setFlash(
-            __('The project with id: %s has been deleted.', h($id))
+            __('<div class="alert alert-warning" role="alert">
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only">Notice:</span>
+                            Project %s has been deleted.
+                          </div>', h($id))
         );
     } else {
         $this->Session->setFlash(
@@ -215,7 +244,7 @@ class ProjectsController extends AppController {
         }
     }
     
-    if ($this->action === 'add') {
+    if ($this->action === 'add' || $this->action === 'applicants') {
         if($user['role'] == 'research'){
         return true;
         }

@@ -31,6 +31,7 @@
         <th>Project ID</th>
         <th>Author ID</th>
         <th>Project Title</th>
+        <th>Project Applicants</th>
         <th>Actions</th>
         <th>Created</th>
         <th>Modified</th>
@@ -48,6 +49,16 @@
                 echo $this->Html->link(
                     $project['Project']['title'],
                     array('action' => 'view', $project['Project']['id'])
+                );
+            ?>
+        </td>
+        <td>              
+             <?php
+                echo $this->Html->link(
+                    'View Applicants',
+                    array('action' => 'applicants', $project['Project']['id']),
+                        array('class' => 'btn btn-info',
+                          'escape' => false)
                 );
             ?>
         </td>
