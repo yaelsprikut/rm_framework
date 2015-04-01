@@ -127,6 +127,35 @@ class ProjectsController extends AppController {
         }
         $this->set('project', $project);
     }   
+    
+    public function invite(){
+        $this->loadModel('ProjectInvite');
+        $found = $this->ProjectInvite->find('first',array(
+            'conditions'=>array(
+                'user_id'=>$this->request->query['user'],
+                'project_id'=>$this->request->query['project']
+            )
+        ));
+        if(count($found)==0){
+        $this->ProjectInvite->set(array(
+            'user_id' => $this->request->query['user'],
+            'project_id' =>$this->request->query['project']
+        ));
+        
+            $this->ProjectInvite->save();
+            $this->Session->setFlash(__('<div class="alert alert-success alert-dismissible" role="alert">'
+                        . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>You have '
+                        . ' successfully invited this user.</div>'));
+            return $this->redirect(array('action' => 'index'));
+        }
+        $this->Session->setFlash(__('<div class="alert alert-danger" role="alert">
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only">Error:</span>
+                            This user has already been invited to participate in this project.
+                          </div>'));
+        return $this->redirect(array('action' => 'index'));
+        
+    }
         
     
     public function saveProject(){

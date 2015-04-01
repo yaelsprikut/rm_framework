@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2015 at 10:43 AM
+-- Generation Time: Apr 02, 2015 at 12:14 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.5.19
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `posts`
@@ -44,7 +44,8 @@ INSERT INTO `posts` (`id`, `title`, `body`, `created`, `modified`, `user_id`) VA
 (2, 'A title once again', 'And the post body follows.', '2015-02-25 22:30:14', NULL, NULL),
 (3, 'Title strikes back', 'This is really exciting! Not.', '2015-02-25 22:30:14', NULL, NULL),
 (4, 'March 15 Post', 'Trial Post', '2015-03-16 01:47:21', '2015-03-16 01:47:21', 17),
-(5, 'This is Yael''s second', 'Post', '2015-03-17 13:22:13', '2015-03-17 13:22:13', 17);
+(5, 'This is Yael''s second', 'Post', '2015-03-17 13:22:13', '2015-03-17 13:22:13', 17),
+(6, 'Yael''s New Post', 'My new post', '2015-03-19 15:04:15', '2015-03-19 15:04:15', 17);
 
 -- --------------------------------------------------------
 
@@ -74,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `profiles` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=99 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=115 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `profiles`
@@ -82,12 +83,20 @@ CREATE TABLE IF NOT EXISTS `profiles` (
 
 INSERT INTO `profiles` (`id`, `bio`, `img`, `semester`, `education`, `work_experience`, `research_experience`, `created`, `modified`, `user_id`) VALUES
 (2, 'My first bio', NULL, 'first', 'George Brown College Diploma', 'My work experience', 'My research', '2015-03-14 09:02:11', '2015-03-19 06:08:07', 18),
-(3, 'Highly reliable computer programming and systems analysis professional with over five years of experience with customer service in the computer technology industry as well as over-the-phone marketing and support.', NULL, 'third', 'George Brown College Diploma', 'This is my work experience. More text here. ', 'I am currently working on a capstone project developing a website that will become a database-type of tool that will allow students to search and apply for research projects.', '2015-03-14 09:15:56', '2015-03-19 06:41:57', 17),
+(3, 'Highly reliable computer programming and systems analysis professional with over five years of experience with customer service in the computer technology industry as well as over-the-phone marketing and support.', NULL, 'first', 'George Brown College Diploma', 'This is my work experience. More text here. More text. Even more text here.', 'I am currently working on a capstone project developing a website that will become a database-type of tool that will allow students to search and apply for research projects.', '2015-03-14 09:15:56', '2015-03-30 22:49:31', 17),
 (6, 'My name is Thomas James and I am a fashion student My name is Thomas James and I am a fashion student My name is Thomas James and I am a fashion student My name is Thomas James and I am a fashion student', NULL, 'first', 'George Brown College Diploma', 'I have worked in customer service all my life...', 'Alright then', '2015-03-14 14:09:52', '2015-03-17 15:23:48', 22),
 (31, 'My name is Alex, I like cars, Dogs, snowboarding, computers, Linux', NULL, NULL, 'Computer programming', 'Wegz Stadium Bar, PSR\r\nSales, American Eagle Outfitters\r\nProstitute on Jarvis Specialized in BSDM\r\n', 'Linux\r\nResearching Buttholes - Yaels', '2015-03-17 15:26:28', '2015-03-17 15:27:03', 39),
 (72, 'Esther Profile', NULL, 'first', 'George Brown College Diploma', 'lol', 'lol', '2015-03-17 22:51:39', '2015-03-19 06:53:55', 40),
 (73, 'New profile', NULL, NULL, 'lol', 'lol', 'lol', '2015-03-19 03:14:06', '2015-03-19 03:14:06', 50),
-(95, NULL, NULL, NULL, NULL, NULL, NULL, '2015-03-19 09:53:03', '2015-03-19 09:53:03', NULL);
+(105, NULL, NULL, NULL, NULL, NULL, NULL, '2015-03-23 15:10:16', '2015-03-23 15:10:16', NULL),
+(106, 'jhkjhkjhkjhkjhkjhkjh', NULL, 'first', 'hkjhkjh', 'jhgbjnhbhb', 'kjhmjhhkjmhkjh', '2015-03-31 01:02:59', '2015-03-31 01:02:59', NULL),
+(107, 'I am Fabio I''m so coooool', NULL, 'first', 'jhkjhkjhkhkjh', 'kjhkhkhkuhkjh', 'kjhkjhkjhkjh', '2015-03-31 01:04:16', '2015-03-31 01:04:52', 59),
+(108, NULL, NULL, NULL, NULL, NULL, NULL, '2015-03-31 16:31:46', '2015-03-31 16:31:46', NULL),
+(109, NULL, NULL, NULL, NULL, NULL, NULL, '2015-03-31 16:32:06', '2015-03-31 16:32:06', NULL),
+(110, 'SDHlkghdghdlgkhldkjghdlkghdkgjhdfgjh', NULL, 'first', 'skdjflskdjfhdksfhsdkjfh', 'skdjhslkhslkjhsldkghslgukh', 'skdjhskfdhfkdjflskdjfh', '2015-03-31 19:05:12', '2015-03-31 19:05:12', NULL),
+(111, 'My name is Nathan Cheng and I am a tool', NULL, NULL, 'George Brown College Diploma', 'Blah blah blah', 'blah blah blah', '2015-04-01 14:58:52', '2015-04-01 14:58:52', 62),
+(113, 'About me', NULL, 'first', 'George Brown College', 'Employment', 'research', '2015-04-01 20:56:19', '2015-04-01 20:57:04', 76),
+(114, NULL, NULL, NULL, NULL, NULL, NULL, '2015-04-01 21:03:50', '2015-04-01 21:03:50', NULL);
 
 -- --------------------------------------------------------
 
@@ -511,17 +520,73 @@ CREATE TABLE IF NOT EXISTS `projects` (
   `skills` text,
   `about` text,
   `program_id` int(11) DEFAULT NULL,
-  `user_id` int(11) DEFAULT NULL,
+  `create_id` int(11) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `projects`
 --
 
-INSERT INTO `projects` (`id`, `title`, `summary`, `description`, `skills`, `about`, `program_id`, `user_id`, `created`, `modified`) VALUES
-(1, 'The title', 'This is the post body.', NULL, NULL, NULL, NULL, NULL, '2015-03-19 02:54:59', NULL);
+INSERT INTO `projects` (`id`, `title`, `summary`, `description`, `skills`, `about`, `program_id`, `create_id`, `created`, `modified`) VALUES
+(19, 'Chief Technology Officer - Toronto, ON, Canada', 'Fujitsu Canada, provides a complete portfolio of business technology services, computing platforms, and industry solutions. ', 'Fujitsu platform products are based on scalable, reliable and high-performance server, storage, software, point-of-sale, and mobile technologies. Fujitsu combines its renowned platform offerings with a full suite of onshore, near shore and offshore system integration, outsourcing, and datacenter services covering applications, operations, infrastructure, customer service, and multi-vendor lifecycle services. ', NULL, 'The Chief Technology Officer (CTO) is a strategic role within the clientâ€™s Account, with an objective to drive growth and help to facilitate the introduction of differentiated Offerings and solutions within Fujitsuâ€™s Portfolio that have business value to the client. ', 153, 54, '2015-03-31 07:12:05', '2015-03-31 07:12:05'),
+(20, 'Customer Success Manager, Toronto', 'Nomis is looking for the best Customer Success Manager in the galaxy.  While we aim high, you aim even higher.', 'You are a natural diplomat capable of persuading and enlightening complex organizations.  With the confidence that comes from a proven background, you thrive on delivering value-laden insights and delighting customers through value maximization.  You will report to the VP of Customer Success and play a crucial role in establishing a new world-class Customer Success operation.', NULL, 'Nomis is a fast-growth company that combines cutting-edge Silicon Valley approaches to big data, advanced modeling, and deep analytics to help large and medium-sized retail banks better understand their customers.', 705, 54, '2015-03-31 07:13:35', '2015-03-31 07:13:35'),
+(21, 'SharePoint Specialist', 'Reporting to the Manager of Information Management or Manager, Information Technology/Information Technology (IT/IM), the SharePoint Specialist is responsible.', 'Works with PHO program areas and IMIT business analysts to understand the business requirements and features needed in custom SharePoint solutions.\r\n\r\nParticipates in joint application development sessions with program areas and other IMIT development staff and ensures that application solutions meet business requirements.', NULL, 'Public Health Ontario (â€œPHOâ€) is an arm''s-length government agency dedicated to protecting and promoting the health of all Ontarians and reducing inequities in health. As a hub organization, PHO links public health practitioners, front-line health workers and researchers to the best scientific intelligence and knowledge from around the world.', 723, 54, '2015-03-31 07:15:18', '2015-03-31 07:15:18'),
+(24, 'Application Architect for Homework Help - Immediate Contract!', 'Students have access to both guided and independent learning in a unique environment that combines technology and personal interaction.', 'In collaboration with management and the Homework Help team, the Application Architectâ€™s role is to provide leadership and guideance through a project to re-implement the HH Chatrooms using mobile-friendly technologies. Within that leadership, they will ensure that the proposed solution(s) maintain the stability and integrity of Homework Helpâ€™s network infrastructure, databases and other technologies. In addition, the Application Architect will work with the HH technical team to specify, monitor, integrate, and optimize the new Chat application software within the greater group of services that comprise the HH Chat offering.', NULL, 'Collaborate with management and development team to assess near- and long- term Chat Application and System needs\r\nâ€¢In conjunction with management and the Homework Help Development team, design a solution providing a ''Ask A Tutor Chat'' service usable by mobile browsers.\r\nâ€¢Architect a solution with necessary reliability, maintainability, operability, performance and security.', 145, 54, '2015-03-31 16:18:57', '2015-03-31 16:18:57');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `projects_users_applies`
+--
+
+CREATE TABLE IF NOT EXISTS `projects_users_applies` (
+  `project_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `projects_users_applies`
+--
+
+INSERT INTO `projects_users_applies` (`project_id`, `user_id`) VALUES
+(19, 17),
+(20, 17),
+(19, 59),
+(20, 59),
+(24, 17),
+(19, 76);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `projects_users_invites`
+--
+
+CREATE TABLE IF NOT EXISTS `projects_users_invites` (
+  `user_id` int(11) NOT NULL,
+  `project_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `projects_users_saves`
+--
+
+CREATE TABLE IF NOT EXISTS `projects_users_saves` (
+  `project_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `projects_users_saves`
+--
+
+INSERT INTO `projects_users_saves` (`project_id`, `user_id`) VALUES
+(21, 17),
+(20, 76);
 
 -- --------------------------------------------------------
 
@@ -534,7 +599,14 @@ CREATE TABLE IF NOT EXISTS `tags` (
   `tag` varchar(100) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tags`
+--
+
+INSERT INTO `tags` (`id`, `tag`, `created`, `modified`) VALUES
+(1, 'HTML', '2015-03-19 10:43:52', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -554,7 +626,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   `program_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -562,15 +634,18 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `fname`, `lname`, `studentid`, `username`, `password`, `role`, `campus`, `created`, `modified`, `program_id`) VALUES
 (4, 'Admin', 'Admin', NULL, 'admin', '$2a$10$ooeQ7XIrb63Jn/U3ZpaoquwaqY61NG9T.Hbf0WT4TsxVK8YsBlssa', 'admin', NULL, '2015-03-08 03:09:08', '2015-03-19 09:54:26', NULL),
-(17, 'Yael', 'Sprikut', '100871258', 'ysprikut@georgebrown.ca', '$2a$10$A2ep.5IsVTYNfX9wi6cAruqsuzXjJ21aS4U3/U6qns9EiQU/jRlZu', 'student', 'Casa Loma', '2015-03-14 03:33:30', '2015-03-19 06:41:57', 248),
-(18, 'Tatiana', 'Sprikut', '100', 'yanalo@yahoo.com', '$2a$10$PdfjA2aaYxIozggJkKCueee9dAQiDRRDcVGlkCqJZ9EnbS8wvhM/6', 'student', 'Casa Loma', '2015-03-14 05:36:52', '2015-03-19 06:08:07', 156),
+(17, 'Yael', 'Sprikut', '100871258', 'ysprikut@georgebrown.ca', '$2a$10$A2ep.5IsVTYNfX9wi6cAruqsuzXjJ21aS4U3/U6qns9EiQU/jRlZu', 'student', 'Casa Loma', '2015-03-14 03:33:30', '2015-03-30 22:49:31', 248),
+(18, 'Tatiana', 'Sprikut', '100872399', 'yanalo@yahoo.com', '$2a$10$PdfjA2aaYxIozggJkKCueee9dAQiDRRDcVGlkCqJZ9EnbS8wvhM/6', 'admin', 'Casa Loma', '2015-03-14 05:36:52', '2015-03-23 15:10:16', 156),
 (39, 'Alex ', 'Diker', '100746284', 'admin@777ruru.ru', '$2a$10$/um5KTmj1/AL01RogHXHQOPFGVwbFNzgbPmcxGZ87RydOmsu8AUbS', 'student', 'Casa Loma', '2015-03-17 15:19:06', '2015-03-17 15:27:03', NULL),
 (40, 'Esther', 'Baruti', '100871100', 'esther@gmail.com', '$2a$10$tQkj.7IWgnnUAxPLww9J.O0YoU9gnFwzh9doNb9jyZwvDFdvciiCm', 'student', 'Casa Loma', '2015-03-17 18:52:28', '2015-03-19 06:53:55', 248),
 (49, 'Staff', 'Staff', NULL, 'staff', '$2a$10$nRsgUfYoyHVWoVFr6gEhuOSEixL.LEI8Gg/y7l9CrxnSmQJqAN8Pa', 'staff', NULL, '2015-03-19 02:42:08', '2015-03-19 10:00:14', NULL),
-(50, 'Leonid', 'Sprikut', '100981818', 'leo@mail.com', '$2a$10$Tz.26a64RJnd1gjubceWiOvJ8xLSy0SJTbAbOXhVLYE33SXTdsN2C', 'student', 'St. James', '2015-03-19 03:08:05', '2015-03-19 03:08:05', NULL),
-(52, 'Shay', 'Flanagan', '900', 'shay@mail.com', '$2a$10$56ai/lL7BM577gJtaWDytOWFZuYvin7Li8lfsIxtX/y6xSeodfhXq', 'student', 'St. James', '2015-03-19 05:07:02', '2015-03-19 05:07:02', 143),
-(53, 'Thomas', 'James', '100871200', 'thomas@mail.com', '$2a$10$PDcppdlyWwHKt9pFGS0rr.lw4ctvdrRAIwwFqBJcTuM5Jgt1nIdd2', 'student', 'Waterfront', '2015-03-19 07:01:20', '2015-03-19 07:06:36', 147),
-(54, 'Research', 'Research', NULL, 'research', '$2a$10$ueHnFKp548pOWAljtL3NAOFKRuBcF..9lWihH70Ecg/MCkRkk2sGy', 'research', NULL, '2015-03-19 08:30:44', '2015-03-19 09:55:11', NULL);
+(54, 'Research', 'Research', NULL, 'research', '$2a$10$ueHnFKp548pOWAljtL3NAOFKRuBcF..9lWihH70Ecg/MCkRkk2sGy', 'research', NULL, '2015-03-19 08:30:44', '2015-03-19 09:55:11', NULL),
+(57, 'Scott', 'C', '100871250', 'scott@mail.com', '$2a$10$gi7TlPd4xdH8QlXswwT4BeE9omxsrc4/tzPblLrw9EHewC3tUW7Fe', 'research', 'Casa Loma', '2015-03-28 19:54:26', '2015-03-28 19:54:26', 148),
+(59, 'Fabio', 'Gomes', '100100100', 'fabio@gmail.com', '$2a$10$Grw9R1tKYKWQuK83MliQk.BG/2v9aZAtP10M1HlbWvKxSZIkp8eCG', 'student', 'Waterfront', '2015-03-31 01:01:21', '2015-03-31 01:04:52', 709),
+(60, 'Anjana', 'Shah', '123456', 'ashah@gmail.com', '$2a$10$X4C9ew47Wszj3pQDcSv.r.PvWwrHHglqFNVcZANm98M.1teTChHqy', 'staff', 'Casa Loma', '2015-03-31 19:00:57', '2015-03-31 19:00:57', 248),
+(62, 'NAthan', 'Cheng', '100852405', 'yaelsuck@gmail.com', '$2a$10$DsCeVph5Qdqk.fg1sVXQS.tOrOtJZz0HeABUlTl8M.Bo5f4HlgWHy', 'student', 'Casa Loma', '2015-03-31 19:09:00', '2015-03-31 19:09:00', 741),
+(74, 'Michael', 'Ling', '100100', 'mike@gmail.com', '$2a$10$6lTLTJxFmm56QYCF.svSjuJZqOchaIbuBEQEI56co8t8LZwH/XUIS', 'student', 'St. James', '2015-04-01 17:20:44', '2015-04-01 17:20:44', 143),
+(76, 'Gary', 'Baruti', '100100100', 'gary1@gmail.com', '$2a$10$DbPQDG2n9uFqVggYHsntOuZHxoUs6n5B8iGyw9x9ea6lcCdIx9Osy', 'staff', 'St. James', '2015-04-01 20:55:08', '2015-04-01 21:03:50', 319);
 
 --
 -- Indexes for dumped tables
@@ -601,6 +676,12 @@ ALTER TABLE `projects`
  ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `projects_users_saves`
+--
+ALTER TABLE `projects_users_saves`
+ ADD KEY `project_id` (`project_id`), ADD KEY `user_id` (`user_id`);
+
+--
 -- Indexes for table `tags`
 --
 ALTER TABLE `tags`
@@ -620,12 +701,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `profiles`
 --
 ALTER TABLE `profiles`
-MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=99;
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=115;
 --
 -- AUTO_INCREMENT for table `programs`
 --
@@ -635,17 +716,17 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=950;
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT for table `tags`
 --
 ALTER TABLE `tags`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=55;
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=77;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

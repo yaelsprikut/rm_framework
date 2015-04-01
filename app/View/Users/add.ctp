@@ -137,9 +137,8 @@ if($current_user['role'] == 'admin'){
                       <?php
                         echo $this->Form->input('role', array(
                         'options' => array(                    
-                        'student' => 'Student', 
-                            'staff' => 'Staff', 
-                            'research' => 'Research'),
+                        'student' => 'Student' 
+                            ),
                               'label' => false,
                               'class' => 'form-control input-md'             
                     ));                   
@@ -278,9 +277,7 @@ if($current_user['role'] == 'admin'){
                       <?php
                         echo $this->Form->input('role', array(
                         'options' => array(                    
-                        'student' => 'Student', 
-                            'staff' => 'Staff', 
-                            'research' => 'Research'),
+                            'staff' => 'Staff'),
                               'label' => false,
                               'class' => 'form-control input-md'             
                     ));                   
@@ -402,8 +399,6 @@ if($current_user['role'] == 'admin'){
                       <?php
                         echo $this->Form->input('role', array(
                         'options' => array(                    
-                        'student' => 'Student', 
-                            'staff' => 'Staff', 
                             'research' => 'Research'),
                               'label' => false,
                               'class' => 'form-control input-md'             

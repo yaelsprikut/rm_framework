@@ -59,12 +59,9 @@ class UsersController extends AppController {
     public function add() {
         $this->set('programs', $this->User->Program->find('list', array(
         'fields' => 'Program.ProgramName')));
-        if ($this->request->is('post')) {
+           if ($this->request->is('post')) {
             $this->User->create();
-            //$this->request->data['Profile']['user_id'] = $this->Auth->user('id');
-            //$this->User->Profile->create();
-           
-            if ($this->User->save()) {
+            if ($this->User->save($this->request->data)) {
                 $this->Session->setFlash(__('<div class="alert alert-success" role="alert">You have registered. Login to complete your profile.</div>'));
                 return $this->redirect(array('action' => '../#login'));
             }

@@ -1,46 +1,69 @@
-<!-- File: /app/View/Posts/index.ctp -->
-<?php debug($posts); ?>
-<h1>Blog posts</h1>
-<p><?php echo $this->Html->link('Add Post', array('action' => 'add')); ?></p>
-<table class="table table-striped">
-    <tr>
-        <th>Id</th>
-        <th>Title</th>
-        <th>Actions</th>
-        <th>Created</th>
-    </tr>
+<?php echo $this->element('header');?> 
+<hr class="colorgraph">
+<body>
 
-<!-- Here's where we loop through our $posts array, printing out post info -->
+     <!-- Page Content -->
+     <div class='panel'>
+    <div class="container">
+        <hr>
 
-    <?php foreach ($posts as $post): ?>
-    <tr>
-        <td><?php echo $post['Post']['id']; ?></td>
-        <td>
-            <?php
-                echo $this->Html->link(
-                    $post['Post']['title'],
-                    array('action' => 'view', $post['Post']['id'])
-                );
-            ?>
-        </td>
-        <td>
-            <?php
-                echo $this->Form->postLink(
-                    'Delete',
-                    array('action' => 'delete', $post['Post']['id']),
-                    array('confirm' => 'Are you sure?')
-                );
-            ?>
-            <?php
-                echo $this->Html->link(
-                    'Edit', array('action' => 'edit', $post['Post']['id'])
-                );
-            ?>
-        </td>
-        <td>
-            <?php echo $post['Post']['created']; ?>
-        </td>
-    </tr>
-    <?php endforeach; ?>
+        <!-- Title -->
+        <div class="row">
+            <div class="col-md-10">
+                <h3>Homepage</h3>
+            </div>
+        </div>
+        <!-- /.row -->
 
-</table>
+        <!-- Page Features -->
+        <div class="row text-center">
+
+            <div class="col-md-3 col-sm-7 hero-feature">
+                <div class="thumbnail">
+                    <img src="http://placehold.it/900x500" alt="">
+                    <div class="caption">
+                        <h3>Feature Label</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p>
+                            <a href="#" class="btn btn-primary">Apply!</a> <a href="#" class="btn btn-default">More Info</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-7 hero-feature">
+                <div class="thumbnail">
+                    <img src="http://placehold.it/900x500" alt="">
+                    <div class="caption">
+                        <h3>Feature Label</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p>
+                            <a href="#" class="btn btn-primary">Apply!</a> <a href="#" class="btn btn-default">More Info</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-7 hero-feature">
+                <div class="thumbnail">
+                    <img src="http://placehold.it/900x500" alt="">
+                    <div class="caption">
+                        <h3>Feature Label</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p>
+                            <a href="#" class="btn btn-primary">Apply!</a> <a href="#" class="btn btn-default">More Info</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+    </div>
+    <!-- /.container -->
+    </div>
+</body>
+

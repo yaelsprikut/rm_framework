@@ -53,7 +53,7 @@ echo $this->Form->create('Project');
         <br>
         <br>
         <div class="form-group">
-            <label class="col-lg-3 control-label">E-Mail:</label>
+            <label class="col-lg-3 control-label">Project Title:</label>
             <div class="col-md-8">
               <?php echo $this->Form->input('title', 
                                array(
@@ -104,7 +104,7 @@ echo $this->Form->create('Project');
             </div>
           </div>
             <br><!---------------------WORK EXPERIENCE ------------------------------->
-            <h3>Work and Experience</h3>
+            <h3>Additional Industry Partner Information</h3>
             <hr>
             
             <div class="form-group">
