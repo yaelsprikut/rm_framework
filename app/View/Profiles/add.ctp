@@ -2,11 +2,6 @@
 <!-- File: /app/View/Profiles/add.ctp -->
 
 <?php
-//echo $this->Form->create('Profile');
-//echo $this->Form->input('bio');
-//echo $this->Form->input('education');
-//echo $this->Form->input('work_experience');
-//echo $this->Form->input('research_experience');
 //echo $this->Form->end('Save Profile');
 //?>
 <?php echo $this->Form->create('Profile');?>
@@ -26,7 +21,7 @@
                             </li>
                             </ol>
               	<div class="panel-body">
-                    <h3>Create Profile</h3>
+                   <mark><h4>Create Profile</h4></mark> 
                     <div class="container">
                 <div class="no-gutter row">           
         <div class="row">

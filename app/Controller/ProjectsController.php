@@ -100,6 +100,7 @@ class ProjectsController extends AppController {
     
     public function applicants($project_id){
           $this->loadModel('ProjectApply');
+          //$projectTitle = $this->Project->findById($id);
 //        //$this->loadModel('Project');
 //        $this->set('applicants', $this->ProjectApply->find('all'), array(
 //            'conditions' => array('Project.create_id' =>$this->Auth->user('id'))
@@ -111,6 +112,11 @@ class ProjectsController extends AppController {
         $project = $this->ProjectApply->find('all', array(
             'conditions' => array('Project.id' => $project_id)
         ));
+        
+//        $title = $this->Project->find('all', array(
+//            'conditions' => array('Project.id' => $this->request->params['pass'][0])));
+//        $this->set('title', $title);
+        
         if (!$project) {
             //throw new NotFoundException(__('Invalid project'));
             $this->Session->setFlash('<div class="alert alert-danger" role="alert">

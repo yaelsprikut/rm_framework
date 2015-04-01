@@ -40,6 +40,9 @@
                             <li>
                                  <?php echo $this->Html->link('Saved Projects', array('controller' => 'projects', 'action' => 'saved', $this->Session->read('Auth.User.id'))); ?>
                             </li>
+                            <li>
+                                View My Invitations
+                            </li>
                         </ul>              
                     </li>
                 <li>

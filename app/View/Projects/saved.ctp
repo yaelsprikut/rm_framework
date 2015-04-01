@@ -42,7 +42,12 @@
       
         <td><?php echo $project['ProjectSave']['project_id']; ?></td>
         <td><?php echo $project['ProjectSave']['user_id']; ?></td>
-        <td><?php echo $project['Project']['title'];  ?></td>
+        <td> <?php
+                echo $this->Html->link(
+                    $project['Project']['title'],
+                    array('controller' => 'projects','action' => 'view', $project['Project']['id'])
+                );
+            ?></td>
         <td><?php //debug($project); ?>   </td>
     </tr>
     <?php endif; ?>

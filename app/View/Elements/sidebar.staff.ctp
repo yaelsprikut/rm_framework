@@ -38,7 +38,7 @@
                                 <?php echo $this->Html->link('Recently Applied', array('controller' => 'users', 'action' => 'edit', $this->Session->read('Auth.User.id'))); ?>
                             </li>
                             <li>
-                                Saved Projects
+                                <?php echo $this->Html->link('Saved Projects', array('controller' => 'projects', 'action' => 'saved', $this->Session->read('Auth.User.id'))); ?>
                             </li>
                         </ul>              
                     </li>
