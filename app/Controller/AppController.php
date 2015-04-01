@@ -19,6 +19,8 @@ App::uses('Controller', 'Controller');
 App::uses('CakeEmail', 'Network/Email');
 
 class AppController extends Controller {
+//     public $components = array('Session', 'Search.Prg');
+//     var $actsAs = array ('Search.Searchable'); 
     
     //public $helpers = array('Js' => array('Jquery'));
     public $components = array(

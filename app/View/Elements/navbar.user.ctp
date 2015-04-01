@@ -23,8 +23,12 @@
           <li><a href="#">Monster Tags</a></li>
         </ul>   
         </div>
-          <input type="text" class="form-control" placeholder="Search projects, students, teachers, tags etc.">
-          <button type="submit" class="btn btn-primary">Submit</button>      
+          <?php echo $this->Form->create('Project', array('url' => array_merge(array('action' => 'index'), $this->params['pass'])));
+          echo $this->Form->input('title', array('label' => false,
+                                                 'class' => 'form-control input-md',
+                                                 'div' => false, 'empty' => true));
+          ?>
+          <button type="submit" class="btn btn-primary">Submit</button> 
         </div>
       </form>
     

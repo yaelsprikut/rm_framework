@@ -1,108 +1,51 @@
 <?php echo $this->element('header');?>
 <hr class="colorgraph">
-<!-- Page Content -->
+<div class="panel">
+            <div class="panel-heading" style="background-color:#0065A4;color:#eee;">Monster Profiles</div> 
+            <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i>  <a href="">Research Monster</a>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-users"></i> View All Users
+                            </li>
+                            </ol>
+            <div class="panel-body">
+                
     <div class="container">
 
         <!-- Page Heading -->
         <div class="row">
             <div class="col-md-8">
-                <h1 class="page-header">Page Heading
-                    <small>Secondary Text</small>
-                </h1>
+                <h3 class="page-header">Research Monster Profiles
+                    <small>George Brown College Students and Instructors</small>
+                </h3>
             </div>
         </div>
         <!-- /.row -->
-
+<?php foreach($profiles as $profile): ?>
         <!-- Project One -->
         <div class="row">
             <div class="col-md-3">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/300x100" alt="">
-                </a>
+                    <img class="img-responsive" src="http://placehold.it/200x150" alt="">
             </div>
             <div class="col-md-5">
-                <h3>Project One</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <h3><?php echo $profile['User']['fname'] ?>&nbsp;<?php echo $profile['User']['lname'] ?>&nbsp;<small><mark><?php echo $profile['User']['role'] ?></mark></small></h3>
+                <h4><?php echo $profile['Program']['ProgramName'] ?></h4>
+                <p><?php echo $profile['Profile']['bio'] ?></p>
+                <?php
+                echo $this->Html->link(
+                    'View Profile &nbsp;<i class="fa fa-chevron-right"></i>',
+                    array('controller' => 'users','action' => 'view', $profile['User']['id']),
+                    array('class' => 'btn btn-primary',
+                          'escape' => false));?>
             </div>
         </div>
-        <!-- /.row -->
-
         <hr>
-
-        <!-- Project Two -->
-        <div class="row">
-            <div class="col-md-3">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/300x100" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Project Two</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odit velit cumque vero doloremque repellendus distinctio maiores rem expedita a nam vitae modi quidem similique ducimus! Velit, esse totam tempore.</p>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
+        <!-- /.row -->
+        <?php endforeach; ?>
         </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Project Three -->
-        <div class="row">
-            <div class="col-md-3">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/300x100" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Project Three</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, temporibus, dolores, at, praesentium ut unde repudiandae voluptatum sit ab debitis suscipit fugiat natus velit excepturi amet commodi deleniti alias possimus!</p>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Project Four -->
-        <div class="row">
-
-            <div class="col-md-3">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/300x100" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Project Four</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, quidem, consectetur, officia rem officiis illum aliquam perspiciatis aspernatur quod modi hic nemo qui soluta aut eius fugit quam in suscipit?</p>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Project Five -->
-        <div class="row">
-            <div class="col-md-3">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/300x100" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Project Five</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, quo, minima, inventore voluptatum saepe quos nostrum provident ex quisquam hic odio repellendus atque porro distinctio quae id laboriosam facilis dolorum.</p>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
+</div>
 
         <!-- Pagination -->
         <div class="row text-center">

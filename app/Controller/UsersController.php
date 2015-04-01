@@ -5,6 +5,8 @@
 App::uses('AppController', 'Controller');
 
 class UsersController extends AppController {
+    public $components = array('Session', 'Search.Prg');
+    var $actsAs = array ('Search.Searchable'); 
        
     public function beforeFilter() {
         parent::beforeFilter();
@@ -24,6 +26,9 @@ class UsersController extends AppController {
         $this->set('users', $this->paginate());
 //        $data = $this->User->Program->find('list', array('fields' => array('id','ProgramName')));
 //        $this->set('programs', $data);
+        $this->Prg->commonProcess();
+        $this->paginate = array(
+        'conditions' => $this->Project->parseCriteria($this->passedArgs));
 
     }
     
@@ -56,7 +61,10 @@ class UsersController extends AppController {
         'fields' => 'Program.ProgramName')));
         if ($this->request->is('post')) {
             $this->User->create();
-            if ($this->User->save($this->request->data)) {
+            //$this->request->data['Profile']['user_id'] = $this->Auth->user('id');
+            //$this->User->Profile->create();
+           
+            if ($this->User->save()) {
                 $this->Session->setFlash(__('<div class="alert alert-success" role="alert">You have registered. Login to complete your profile.</div>'));
                 return $this->redirect(array('action' => '../#login'));
             }
@@ -164,13 +172,26 @@ class UsersController extends AppController {
     }
 
         public function login() {
+            $this->set('profile', $this->User->Profile->find('all'));
             if ($this->request->is('post')) {
                 if ($this->Auth->login()) { 
                     if($this->Auth->user('role') == 'admin'){
                     return $this->redirect(
                     array('admin' => true, 'controller' => 'users', 'action' => 'index')
                     );
+                }if($this->Auth->user('role') !== 'admin'){
+                    if(!$profile){
+                        return $this->redirect(
+                    array('controller' => 'profiles', 'action' => 'add')
+                    );
+                     
+                        return $this->redirect(
+                    array('controller' => 'projects', 'action' => 'index')
+                    );
+                    }
+                    
                 }
+                
                     return $this->redirect(
                     array('controller' => 'projects', 'action' => 'index')
                     );

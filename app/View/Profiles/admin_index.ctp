@@ -49,7 +49,7 @@
         <td><?php echo $user['Profile']['created']; ?></td>
         <td><?php echo $user['Profile']['modified']; ?></td>
         <td>
-            <?php echo $this->Html->link('View', array('admin' => false, 'action' => 'view', $user['Profile']['id']));?> - 
+            <?php echo $this->Html->link('View', array('admin' => false, 'controller' => 'users','action' => 'view', $user['User']['id']));?> - 
             <?php echo $this->Form->postLink('Delete',array('admin' => false, 'action' => 'delete', $user['Profile']['id']),array('confirm' => 'Are you sure?'));?>
         </td>
     </tr>

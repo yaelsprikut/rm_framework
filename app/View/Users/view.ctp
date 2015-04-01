@@ -10,7 +10,7 @@
                                 <i class="fa fa-dashboard"></i>  <a href="">Research Monster</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-user"></i> My Profile
+                                <i class="fa fa-user"></i> <?php echo $user['User']['fname']; ?>'s Profile
                             </li>
                             </ol>
               	<div class="panel-body">

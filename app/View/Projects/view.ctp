@@ -45,9 +45,11 @@
                     <button class="btn btn-primary">#HTML</button>
                   </div>
             <br>
+            <?php if($current_user['role'] !== 'admin'): ?>
             <blockquote>
                 If you are interested in this project,
                 you are able to apply for it now or save it to view it at a later time.</blockquote>
+            
             <p align='center'>
             <?php
                 echo $this->Html->link(
@@ -62,6 +64,7 @@
                     array('class' => 'btn btn-info',
                           'escape' => false));?>
                 </p>
+            <?php endif; ?>
             <br>
             <br>
             </div>

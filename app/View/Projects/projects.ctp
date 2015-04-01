@@ -28,8 +28,8 @@
     
 <table class="table table-bordered table-hover table-striped">
     <tr>
-        <th>Project ID</th>
-        <th>Author ID</th>
+        <th>Proj_ID</th>
+        <th>Auth_ID</th>
         <th>Project Title</th>
         <th>Project Applicants</th>
         <th>Actions</th>

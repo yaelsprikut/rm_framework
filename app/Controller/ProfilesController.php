@@ -6,7 +6,10 @@ class ProfilesController extends AppController{
     public $components = array('Session'); //only allow 
     
     public function index() {
-        $this->set('profiles', $this->Profile->find('all'));
+        $this->loadModel('User');
+        $this->set('profiles', $this->User->find('all'));
+        //$this->set('profiles', $this->Profile->find('all'));
+        
     }
     
     public function admin_index() {

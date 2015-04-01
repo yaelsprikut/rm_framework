@@ -40,14 +40,16 @@
                             <li>
                                 <?php echo $this->Html->link('Create a Project', array('controller' => 'projects', 'action' => 'add')); ?>
                             </li>
+                        </ul>              
+                    </li>
+                     <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#users"><i class="glyphicon glyphicon-education"></i>&nbsp; <b>Monster Users</b> <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="users" class="collapse">
                             <li>
-                                Saved Projects
+                                <?php echo $this->Html->link('View All Users', array('controller' => 'profiles' , 'action' => 'index')); ?>
                             </li>
                         </ul>              
                     </li>
-                <li>
-                    <a href="#">Events</a>
-                </li>
                 <li>
                      <?php echo $this->Html->link('About Us', array('controller' => 'users', 'action' => 'about')); ?>
                 </li>
